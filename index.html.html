@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praxis Advisory Consultants | Evidence into Action</title>
+<meta name="description" content="Praxis Advisory Consultants is an Islamabad-based development consultancy that turns evidence and policy into delivered results across governance, climate, MERL and human development.">
+<meta name="keywords" content="development consultancy Pakistan, monitoring evaluation, climate governance, policy advisory, MERL, Islamabad">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  --petrol:       #0E4D54;
+  --petrol-dark:  #092e33;
+  --petrol-mid:   #1a6570;
+  --petrol-light: #256472;
+  --brass:        #B5852A;
+  --brass-light:  #d4a44c;
+  --brass-dark:   #8d6420;
+  --mist:         #C9D4D2;
+  --mist-light:   #EBF2F1;
+  --mist-soft:    #F3F8F7;
+  --slate:        #3d4e4b;
+  --mute:         #7a8a84;
+  --white:        #FAFAF8;
+  --off-white:    #F3F7F5;
+  --dark:         #141e1c;
+  --nav-h:        76px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; -webkit-font-smoothing:antialiased; }
+body {
+  font-family:'Inter', sans-serif;
+  color:var(--slate);
+  background:var(--white);
+  overflow-x:hidden;
+  line-height:1.6;
+}
+img { max-width:100%; display:block; }
+a { text-decoration:none; color:inherit; }
+button { cursor:pointer; font-family:inherit; }
+
+/* ============================================================
+   PAGE SYSTEM
+   ============================================================ */
+.page { display:none; }
+.page.active { display:block; }
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+.t-display {
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  line-height:0.95;
+  letter-spacing:-0.025em;
+}
+.t-h1 {
+  font-family:'Fraunces', serif;
+  font-size:clamp(2.6rem, 5.5vw, 5.2rem);
+  font-weight:600;
+  line-height:1.02;
+  letter-spacing:-0.02em;
+}
+.t-h2 {
+  font-family:'Fraunces', serif;
+  font-size:clamp(1.9rem, 3.2vw, 3rem);
+  font-weight:600;
+  line-height:1.1;
+  letter-spacing:-0.015em;
+}
+.t-h3 {
+  font-family:'Fraunces', serif;
+  font-size:1.5rem;
+  font-weight:600;
+  line-height:1.2;
+}
+.t-lead {
+  font-size:1.1rem;
+  font-weight:300;
+  line-height:1.75;
+  color:var(--mute);
+}
+.t-body {
+  font-size:0.975rem;
+  line-height:1.8;
+  color:var(--slate);
+}
+.t-label {
+  font-family:'Inter', sans-serif;
+  font-size:0.68rem;
+  font-weight:700;
+  letter-spacing:0.19em;
+  text-transform:uppercase;
+  color:var(--brass);
+}
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+.wrap       { max-width:1240px; margin:0 auto; padding:0 2rem; }
+.wrap-narrow { max-width:820px;  margin:0 auto; padding:0 2rem; }
+.wrap-wide  { max-width:1440px; margin:0 auto; padding:0 2rem; }
+
+/* ============================================================
+   DESIGN ELEMENTS
+   ============================================================ */
+.brass-rule {
+  display:block;
+  width:44px;
+  height:2px;
+  background:var(--brass);
+  border:none;
+}
+
+/* Geometric grid backdrop */
+.geo-grid {
+  background-image:
+    linear-gradient(rgba(181,133,42,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(181,133,42,.055) 1px, transparent 1px);
+  background-size:64px 64px;
+}
+
+/* Dot pattern */
+.dot-pattern {
+  background-image:radial-gradient(rgba(181,133,42,.12) 1.5px, transparent 1.5px);
+  background-size:28px 28px;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display:inline-flex;
+  align-items:center;
+  gap:0.55rem;
+  padding:0.9rem 2rem;
+  font-family:'Inter', sans-serif;
+  font-size:0.76rem;
+  font-weight:700;
+  letter-spacing:0.09em;
+  text-transform:uppercase;
+  border:none;
+  outline:none;
+  transition:all .22s ease;
+  white-space:nowrap;
+}
+.btn-brass   { background:var(--brass); color:#fff; }
+.btn-brass:hover { background:var(--brass-light); transform:translateY(-1px); }
+.btn-petrol  { background:var(--petrol); color:#fff; }
+.btn-petrol:hover { background:var(--petrol-mid); transform:translateY(-1px); }
+.btn-ghost   { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.35); }
+.btn-ghost:hover { border-color:var(--brass); color:var(--brass-light); transform:translateY(-1px); }
+.btn-outline-petrol {
+  background:transparent;
+  color:var(--petrol);
+  border:1.5px solid var(--petrol);
+}
+.btn-outline-petrol:hover { background:var(--petrol); color:#fff; }
+
+.btn svg { width:13px; height:13px; }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav {
+  position:fixed;
+  inset:0 0 auto;
+  z-index:1000;
+  height:var(--nav-h);
+  display:flex;
+  align-items:center;
+  transition:background .3s, box-shadow .3s;
+}
+.nav-inner {
+  max-width:1360px;
+  margin:0 auto;
+  padding:0 2.5rem;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* Logo */
+.nav-logo { cursor:pointer; display:flex; flex-direction:column; gap:1px; }
+.nav-logo-name {
+  font-family:'Fraunces', serif;
+  font-weight:600;
+  font-size:1.15rem;
+  letter-spacing:-0.01em;
+  color:#fff;
+  transition:color .3s;
+}
+.nav-logo-tag {
+  font-size:0.58rem;
+  font-weight:700;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:var(--brass);
+  line-height:1;
+}
+
+/* Links */
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:2.2rem;
+  list-style:none;
+}
+.nav-links a {
+  font-size:0.78rem;
+  font-weight:600;
+  letter-spacing:0.055em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.82);
+  position:relative;
+  padding-bottom:3px;
+  transition:color .2s;
+}
+.nav-links a::after {
+  content:'';
+  position:absolute;
+  bottom:0; left:0;
+  width:0; height:1.5px;
+  background:var(--brass);
+  transition:width .25s ease;
+}
+.nav-links a:hover,
+.nav-links a.active { color:var(--brass); }
+.nav-links a:hover::after,
+.nav-links a.active::after { width:100%; }
+.nav-links .nav-cta {
+  background:var(--brass);
+  color:#fff !important;
+  padding:0.55rem 1.3rem;
+  letter-spacing:0.07em;
+  transition:background .2s !important;
+}
+.nav-links .nav-cta::after { display:none !important; }
+.nav-links .nav-cta:hover { background:var(--brass-light) !important; }
+
+/* Scroll state */
+.nav.opaque {
+  background:var(--white);
+  box-shadow:0 1px 0 rgba(14,77,84,.1);
+}
+.nav.opaque .nav-logo-name { color:var(--petrol); }
+.nav.opaque .nav-links a { color:var(--slate); }
+.nav.opaque .nav-links a:hover,
+.nav.opaque .nav-links a.active { color:var(--brass); }
+.nav.opaque .nav-links .nav-cta { color:#fff !important; }
+
+/* Hamburger */
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; }
+.hamburger span { display:block; width:22px; height:2px; background:#fff; transition:.3s; }
+.nav.opaque .hamburger span { background:var(--petrol); }
+
+/* Mobile nav */
+.mob-nav {
+  position:fixed;
+  inset:var(--nav-h) 0 0;
+  background:var(--petrol-dark);
+  z-index:999;
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:2rem;
+}
+.mob-nav.open { display:flex; }
+.mob-nav a {
+  font-family:'Fraunces', serif;
+  font-size:2.2rem;
+  font-weight:400;
+  color:#fff;
+  transition:color .2s;
+}
+.mob-nav a:hover { color:var(--brass); }
+
+/* ============================================================
+   PAGE HERO HEADER (inner pages)
+   ============================================================ */
+.pg-hero {
+  min-height:56vh;
+  background:var(--petrol);
+  display:flex;
+  align-items:flex-end;
+  padding-top:var(--nav-h);
+  padding-bottom:5rem;
+  position:relative;
+  overflow:hidden;
+}
+.pg-hero-content {
+  position:relative;
+  z-index:2;
+}
+.pg-hero .t-h1 { color:#fff; max-width:680px; }
+.pg-hero .t-lead { color:rgba(201,212,210,.8); margin-top:1.25rem; max-width:560px; }
+
+/* Overlay accent shape */
+.pg-hero::after {
+  content:'';
+  position:absolute;
+  top:0; right:0;
+  width:38%;
+  height:100%;
+  background:linear-gradient(135deg, transparent 48%, rgba(181,133,42,.07) 48%);
+  pointer-events:none;
+}
+
+/* ============================================================
+   ============================================================
+   HOME PAGE
+   ============================================================
+   ============================================================ */
+
+/* ---- HERO ---- */
+.hero {
+  min-height:100vh;
+  background:var(--petrol);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding-bottom:5.5rem;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-glow {
+  position:absolute;
+  bottom:-25%;
+  left:-8%;
+  width:55%;
+  height:90%;
+  background:radial-gradient(ellipse, rgba(181,133,42,.1) 0%, transparent 68%);
+  pointer-events:none;
+}
+
+.hero-accent {
+  position:absolute;
+  top:0; right:0;
+  width:45%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+}
+.hero-accent svg { width:100%; height:100%; }
+
+.hero-content { position:relative; z-index:2; }
+
+.hero-eyebrow {
+  display:flex;
+  align-items:center;
+  gap:0.9rem;
+  margin-bottom:2rem;
+}
+.hero-eyebrow-line { width:36px; height:1px; background:var(--brass); }
+
+.hero-headline {
+  font-family:'Fraunces', serif;
+  font-size:clamp(3.8rem, 9vw, 9.5rem);
+  font-weight:600;
+  line-height:0.92;
+  letter-spacing:-0.03em;
+  color:#fff;
+}
+.hero-headline em {
+  font-style:italic;
+  color:var(--brass-light);
+}
+
+.hero-sub {
+  max-width:620px;
+  font-size:1.05rem;
+  font-weight:300;
+  color:rgba(201,212,210,.82);
+  line-height:1.75;
+  margin-top:1.75rem;
+  margin-bottom:3rem;
+}
+
+.hero-ctas { display:flex; align-items:center; gap:1.2rem; flex-wrap:wrap; }
+
+.hero-scroll {
+  position:absolute;
+  bottom:2.5rem;
+  right:2.5rem;
+  display:flex;
+  align-items:center;
+  gap:0.7rem;
+  color:rgba(201,212,210,.5);
+  font-size:0.62rem;
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+}
+.hero-scroll-bar {
+  width:1px;
+  height:44px;
+  background:linear-gradient(var(--brass), transparent);
+}
+
+/* ---- MARQUEE ---- */
+.marquee {
+  background:var(--brass);
+  overflow:hidden;
+  padding:1rem 0;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.marquee-inner {
+  display:flex;
+  gap:0;
+  animation:marquee 22s linear infinite;
+  width:max-content;
+}
+.marquee-item {
+  font-size:0.72rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#fff;
+  padding:0 2rem;
+  border-right:1px solid rgba(255,255,255,.25);
+  white-space:nowrap;
+}
+@keyframes marquee {
+  0%   { transform:translateX(0); }
+  100% { transform:translateX(-50%); }
+}
+
+/* ---- STAT BAR ---- */
+.stat-bar {
+  background:var(--petrol-dark);
+  border-bottom:1px solid rgba(181,133,42,.18);
+}
+.stat-bar-inner {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+}
+.stat-cell {
+  padding:2rem 2.5rem;
+  border-right:1px solid rgba(255,255,255,.07);
+  text-align:center;
+}
+.stat-cell:last-child { border-right:none; }
+.stat-num {
+  font-family:'Fraunces', serif;
+  font-size:2.4rem;
+  font-weight:600;
+  color:var(--brass);
+  line-height:1;
+  display:block;
+}
+.stat-lbl {
+  font-size:0.64rem;
+  font-weight:600;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:rgba(201,212,210,.5);
+  margin-top:.4rem;
+  display:block;
+}
+
+/* ---- INTRO ---- */
+.intro { padding:9rem 0; background:var(--white); }
+.intro-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7rem;
+  align-items:center;
+}
+.intro-left .t-h2 { color:var(--petrol); margin-top:.9rem; }
+.intro-right .t-body { margin-bottom:1.5rem; }
+.intro-right .t-body:last-of-type { margin-bottom:2.2rem; }
+
+/* ---- SERVICES TILES ---- */
+.services-sect { padding:8rem 0; background:var(--off-white); }
+.sect-hdr { margin-bottom:4rem; }
+.sect-hdr .t-h2 { color:var(--petrol); margin-top:.8rem; }
+
+.svc-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  background:var(--mist);
+}
+.svc-card {
+  background:var(--white);
+  padding:2.75rem 2.5rem 3.2rem;
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  transition:background .25s;
+}
+.svc-card::before {
+  content:'';
+  position:absolute;
+  bottom:0; left:0;
+  width:0; height:3px;
+  background:var(--brass);
+  transition:width .4s ease;
+}
+.svc-card:hover { background:var(--mist-light); }
+.svc-card:hover::before { width:100%; }
+
+.svc-num {
+  font-family:'Fraunces', serif;
+  font-size:4rem;
+  font-weight:300;
+  color:var(--mist);
+  line-height:1;
+  margin-bottom:1.75rem;
+  display:block;
+}
+.svc-title {
+  font-family:'Fraunces', serif;
+  font-size:1.2rem;
+  font-weight:600;
+  color:var(--petrol);
+  line-height:1.25;
+  margin-bottom:0.9rem;
+}
+.svc-text {
+  font-size:0.875rem;
+  color:var(--mute);
+  line-height:1.72;
+}
+.svc-more {
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  margin-top:1.5rem;
+  font-size:0.73rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--brass);
+}
+.svc-more svg { width:11px; height:11px; }
+
+/* ---- WHY PRAXIS ---- */
+.why-sect {
+  padding:9rem 0;
+  background:var(--petrol);
+  position:relative;
+  overflow:hidden;
+}
+.why-sect .t-label { position:relative; z-index:1; }
+.why-sect .t-h2 { color:#fff; margin-top:.8rem; position:relative; z-index:1; }
+.why-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:4rem;
+  margin-top:4.5rem;
+  position:relative;
+  z-index:1;
+}
+.why-item { border-top:1px solid rgba(181,133,42,.35); padding-top:2.2rem; }
+.why-item h3 {
+  font-family:'Fraunces', serif;
+  font-size:1.5rem;
+  font-weight:600;
+  color:#fff;
+  line-height:1.2;
+  margin-bottom:1.1rem;
+}
+.why-item h3 em { font-style:italic; color:var(--brass-light); }
+.why-item p {
+  font-size:0.89rem;
+  color:rgba(201,212,210,.72);
+  line-height:1.78;
+}
+
+/* ---- CLIENTS ---- */
+.clients-sect { padding:8rem 0; background:var(--white); text-align:center; }
+.clients-sect .t-h2 { color:var(--petrol); margin-top:.8rem; }
+.clients-row {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:.75rem 1.8rem;
+  margin-top:3.5rem;
+}
+.client-pill {
+  font-size:0.82rem;
+  font-weight:500;
+  padding:0.6rem 1.4rem;
+  border:1px solid var(--mist);
+  color:var(--slate);
+  transition:border-color .2s, color .2s;
+  cursor:default;
+}
+.client-pill:hover { border-color:var(--brass); color:var(--brass); }
+
+/* ---- CTA BAND ---- */
+.cta-band { padding:8rem 0; background:var(--off-white); text-align:center; }
+.cta-band .t-h2 { color:var(--petrol); margin-top:.8rem; margin-bottom:1.5rem; }
+.cta-band .t-lead { margin:0 auto 3rem; max-width:540px; }
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+.story-sect { padding:9rem 0; background:var(--white); }
+.story-grid {
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:7rem;
+}
+.story-aside {
+  position:sticky;
+  top:6rem;
+  height:max-content;
+}
+.story-quote {
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-size:1.6rem;
+  font-weight:400;
+  color:var(--petrol);
+  line-height:1.45;
+  position:relative;
+  padding-top:1.5rem;
+}
+.story-quote::before {
+  content:'';
+  display:block;
+  width:100%;
+  height:1px;
+  background:var(--brass);
+  margin-bottom:1.5rem;
+}
+.story-body p { margin-bottom:1.5rem; }
+.story-body p:last-of-type { margin-bottom:0; }
+
+/* Objectives */
+.obj-sect { padding:8rem 0; background:var(--off-white); }
+.obj-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  border:1px solid var(--mist);
+  margin-top:3.5rem;
+}
+.obj-item {
+  display:flex;
+  gap:1.75rem;
+  padding:2.2rem 2.5rem;
+  border-right:1px solid var(--mist);
+  border-bottom:1px solid var(--mist);
+  transition:background .2s;
+}
+.obj-item:nth-child(even)       { border-right:none; }
+.obj-item:hover                  { background:var(--white); }
+.obj-n {
+  font-family:'Fraunces', serif;
+  font-size:2.2rem;
+  font-weight:600;
+  color:var(--mist);
+  line-height:1;
+  flex-shrink:0;
+  width:2.5rem;
+}
+.obj-txt { font-size:0.93rem; color:var(--slate); line-height:1.72; padding-top:.35rem; }
+
+/* ============================================================
+   SERVICES PAGE
+   ============================================================ */
+.svc-full-sect { padding:7rem 0; background:var(--white); }
+.svc-full-item {
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:5.5rem;
+  padding:5.5rem 0;
+  border-bottom:1px solid var(--mist);
+  align-items:start;
+}
+.svc-full-item:first-child { padding-top:2.5rem; }
+.svc-full-item:last-child   { border-bottom:none; }
+.svc-aside { position:sticky; top:6rem; }
+.svc-big-num {
+  font-family:'Fraunces', serif;
+  font-size:6rem;
+  font-weight:300;
+  color:var(--mist);
+  line-height:1;
+  margin-bottom:.75rem;
+}
+.svc-aside-title {
+  font-family:'Fraunces', serif;
+  font-size:1.75rem;
+  font-weight:600;
+  color:var(--petrol);
+  line-height:1.2;
+  margin:1rem 0;
+}
+.tag-row { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:1.75rem; }
+.tag {
+  font-size:0.7rem;
+  font-weight:600;
+  letter-spacing:.03em;
+  padding:.3rem .85rem;
+  background:var(--mist-light);
+  color:var(--petrol);
+  border:1px solid var(--mist);
+}
+.svc-body p { margin-bottom:1.4rem; }
+.svc-body p:last-child { margin-bottom:0; }
+
+/* ============================================================
+   EXPERTISE PAGE
+   ============================================================ */
+.exp-sect { padding:7rem 0; background:var(--white); }
+.exp-intro { max-width:640px; margin-bottom:5rem; }
+.exp-intro .t-body { margin-top:1rem; }
+.exp-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--mist);
+}
+.exp-cell {
+  padding:1.75rem 2rem;
+  border-right:1px solid var(--mist);
+  border-bottom:1px solid var(--mist);
+  position:relative;
+  overflow:hidden;
+  transition:background .22s;
+}
+.exp-cell:nth-child(4n) { border-right:none; }
+.exp-cell::before {
+  content:'';
+  position:absolute;
+  left:0; top:0; bottom:0;
+  width:3px;
+  background:var(--brass);
+  transform:scaleY(0);
+  transform-origin:top;
+  transition:transform .3s;
+}
+.exp-cell:hover { background:var(--mist-light); }
+.exp-cell:hover::before { transform:scaleY(1); }
+.exp-cell p {
+  font-size:.9rem;
+  font-weight:500;
+  color:var(--petrol);
+  line-height:1.4;
+}
+
+/* ============================================================
+   TEAM PAGE
+   ============================================================ */
+.team-sect { padding:8rem 0; background:var(--white); }
+.team-intro { max-width:640px; margin-bottom:5rem; }
+.team-intro .t-body { margin-top:1rem; }
+.team-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  max-width:980px;
+}
+.team-card {}
+.team-card-header {
+  background:var(--petrol);
+  padding:2.75rem 3rem 0;
+  position:relative;
+  overflow:hidden;
+  min-height:200px;
+}
+.team-card-geo {
+  position:absolute;
+  bottom:-10px; right:0;
+  width:130px; height:130px;
+  opacity:.1;
+}
+.team-pname {
+  font-family:'Fraunces', serif;
+  font-size:2rem;
+  font-weight:600;
+  color:#fff;
+  line-height:1.05;
+}
+.team-ptitle {
+  display:block;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-top:.6rem;
+}
+.team-card-body {
+  background:var(--off-white);
+  padding:2.5rem 3rem;
+  border:1px solid var(--mist);
+  border-top:none;
+}
+.team-bio { font-size:.93rem; color:var(--slate); line-height:1.8; margin-bottom:1.1rem; }
+.team-tags { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:1.5rem; }
+.team-tag {
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.03em;
+  padding:.28rem .75rem;
+  background:var(--mist-light);
+  color:var(--petrol);
+  border:1px solid var(--mist);
+}
+
+.associate-box {
+  margin-top:5rem;
+  padding:3rem;
+  background:var(--mist-light);
+  border:1px solid var(--mist);
+  border-left:3px solid var(--brass);
+  max-width:760px;
+}
+.associate-box h3 {
+  font-family:'Fraunces', serif;
+  font-size:1.35rem;
+  font-weight:600;
+  color:var(--petrol);
+  margin:1rem 0 .75rem;
+}
+.associate-box p { font-size:.93rem; color:var(--slate); line-height:1.78; }
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+.contact-sect { padding:8rem 0; background:var(--white); }
+.contact-grid {
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:6rem;
+  align-items:start;
+}
+.contact-info h3 {
+  font-family:'Fraunces', serif;
+  font-size:1.4rem;
+  font-weight:600;
+  color:var(--petrol);
+  margin-bottom:.75rem;
+}
+.contact-info > p {
+  font-size:.93rem;
+  color:var(--slate);
+  line-height:1.75;
+  margin-bottom:3rem;
+}
+.c-row {
+  display:flex;
+  gap:1rem;
+  align-items:flex-start;
+  padding:1.4rem 0;
+  border-bottom:1px solid var(--mist);
+}
+.c-row:first-of-type { border-top:1px solid var(--mist); }
+.c-icon {
+  width:36px; height:36px;
+  background:var(--mist-light);
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0;
+}
+.c-icon svg { width:16px; height:16px; stroke:var(--petrol); }
+.c-lbl {
+  font-size:.66rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--mute);
+  margin-bottom:.25rem;
+}
+.c-val { font-size:.9rem; font-weight:500; color:var(--petrol); }
+.c-val a { transition:color .2s; }
+.c-val a:hover { color:var(--brass); }
+
+.contact-form-wrap {
+  background:var(--off-white);
+  padding:3.25rem;
+  border:1px solid var(--mist);
+}
+.form-row2 { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.f-grp { margin-bottom:1.5rem; }
+.f-lbl {
+  display:block;
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--mute);
+  margin-bottom:.45rem;
+}
+.f-in, .f-ta, .f-sel {
+  display:block;
+  width:100%;
+  padding:.875rem 1rem;
+  background:var(--white);
+  border:1px solid var(--mist);
+  font-family:'Inter', sans-serif;
+  font-size:.9rem;
+  color:var(--slate);
+  outline:none;
+  transition:border-color .2s;
+  -webkit-appearance:none;
+}
+.f-in:focus, .f-ta:focus, .f-sel:focus { border-color:var(--brass); }
+.f-ta { min-height:140px; resize:vertical; }
+.f-submit {
+  width:100%;
+  padding:1.1rem;
+  background:var(--petrol);
+  color:#fff;
+  font-family:'Inter', sans-serif;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  border:none;
+  cursor:pointer;
+  transition:background .2s;
+}
+.f-submit:hover { background:var(--petrol-mid); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background:var(--petrol-dark);
+  padding:6rem 0 2.75rem;
+  position:relative;
+  overflow:hidden;
+}
+.footer-grid {
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr 1fr;
+  gap:4rem;
+  margin-bottom:5rem;
+  position:relative;
+  z-index:1;
+}
+.footer-brand {}
+.ft-name {
+  font-family:'Fraunces', serif;
+  font-size:1.2rem;
+  font-weight:600;
+  color:#fff;
+}
+.ft-tag {
+  display:block;
+  font-size:.58rem;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-top:2px;
+  margin-bottom:1.5rem;
+}
+.ft-tagline {
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-size:1.1rem;
+  color:rgba(201,212,210,.65);
+}
+.ft-desc {
+  font-size:.83rem;
+  color:rgba(201,212,210,.45);
+  line-height:1.72;
+  margin-top:.75rem;
+}
+.ft-col-head {
+  font-size:.63rem;
+  font-weight:700;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  color:var(--brass);
+  margin-bottom:1.4rem;
+}
+.ft-links { list-style:none; display:flex; flex-direction:column; gap:.72rem; }
+.ft-links a {
+  font-size:.84rem;
+  color:rgba(201,212,210,.55);
+  transition:color .2s;
+}
+.ft-links a:hover { color:var(--brass); }
+.ft-contact p {
+  font-size:.84rem;
+  color:rgba(201,212,210,.55);
+  line-height:1.55;
+  margin-bottom:.55rem;
+}
+.ft-contact a { transition:color .2s; }
+.ft-contact a:hover { color:var(--brass); }
+.ft-bottom {
+  position:relative;
+  z-index:1;
+  padding-top:2.2rem;
+  border-top:1px solid rgba(255,255,255,.07);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+.ft-copy { font-size:.76rem; color:rgba(201,212,210,.35); }
+.ft-bottom-links { display:flex; gap:2rem; }
+.ft-bottom-links a { font-size:.76rem; color:rgba(201,212,210,.35); transition:color .2s; }
+.ft-bottom-links a:hover { color:var(--brass); }
+
+/* ============================================================
+   SCROLL ANIMATIONS
+   ============================================================ */
+.reveal {
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .7s ease, transform .7s ease;
+}
+.reveal.in-view { opacity:1; transform:translateY(0); }
+.reveal-d1 { transition-delay:.1s; }
+.reveal-d2 { transition-delay:.2s; }
+.reveal-d3 { transition-delay:.3s; }
+.reveal-d4 { transition-delay:.4s; }
+.reveal-d5 { transition-delay:.5s; }
+
+/* Hero entry animations */
+@keyframes hIn {
+  from { opacity:0; transform:translateY(22px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.hero-eyebrow  { animation:hIn .8s ease .15s both; }
+.hero-headline { animation:hIn .9s ease .3s  both; }
+.hero-sub      { animation:hIn .8s ease .5s  both; }
+.hero-ctas     { animation:hIn .8s ease .65s both; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1100px) {
+  .svc-grid  { grid-template-columns:repeat(2,1fr); }
+  .intro-grid { grid-template-columns:1fr; gap:3rem; }
+  .story-grid { grid-template-columns:1fr; gap:3rem; }
+  .story-aside { position:static; }
+  .svc-full-item { grid-template-columns:1fr; gap:2.5rem; }
+  .svc-aside { position:static; }
+  .team-grid { grid-template-columns:1fr; max-width:520px; }
+  .exp-grid  { grid-template-columns:repeat(3,1fr); }
+  .exp-cell:nth-child(4n) { border-right:1px solid var(--mist); }
+  .exp-cell:nth-child(3n) { border-right:none; }
+  .contact-grid { grid-template-columns:1fr; gap:3.5rem; }
+  .footer-grid { grid-template-columns:1fr 1fr; gap:2.5rem; }
+}
+@media (max-width:768px) {
+  .nav-links { display:none; }
+  .hamburger { display:flex; }
+  .svc-grid  { grid-template-columns:1fr; }
+  .why-grid  { grid-template-columns:1fr; gap:2.5rem; }
+  .stat-bar-inner { grid-template-columns:repeat(2,1fr); }
+  .stat-cell:nth-child(2)  { border-right:none; }
+  .stat-cell:nth-child(3)  { border-right:1px solid rgba(255,255,255,.07); }
+  .exp-grid  { grid-template-columns:repeat(2,1fr); }
+  .exp-cell:nth-child(3n) { border-right:1px solid var(--mist); }
+  .exp-cell:nth-child(2n) { border-right:none; }
+  .obj-grid  { grid-template-columns:1fr; }
+  .obj-item  { border-right:none !important; }
+  .footer-grid { grid-template-columns:1fr; gap:2rem; }
+  .ft-bottom { flex-direction:column; align-items:flex-start; }
+  .hero-scroll { display:none; }
+  .intro, .services-sect, .why-sect, .clients-sect, .cta-band,
+  .story-sect, .obj-sect, .svc-full-sect, .exp-sect,
+  .team-sect, .contact-sect { padding:5.5rem 0; }
+  .pg-hero { min-height:48vh; padding-bottom:4rem; }
+  .form-row2 { grid-template-columns:1fr; }
+}
+@media (max-width:480px) {
+  .hero-ctas { flex-direction:column; align-items:flex-start; }
+  .exp-grid  { grid-template-columns:1fr; }
+  .exp-cell  { border-right:none !important; }
+  .clients-row { gap:.6rem 1rem; }
+  .contact-form-wrap { padding:2rem; }
+  .team-card-header { padding:2rem 2rem 0; }
+  .team-card-body  { padding:2rem; }
+}
+
+/* Nav active override */
+.nav-links a.active { color:var(--brass) !important; }
+.nav-links a.active::after { width:100% !important; }
+</style>
+</head>
+
+<body>
+
+<!-- ========================================================
+     NAVIGATION
+     ======================================================== -->
+<nav class="nav geo-grid" id="mainNav">
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="gotoPage('home')">
+      <span class="nav-logo-name">Praxis Advisory</span>
+      <span class="nav-logo-tag">Consultants · praxisadv.org</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#" class="nav-link active"  data-page="home"      onclick="gotoPage('home');return false;">Home</a></li>
+      <li><a href="#" class="nav-link"         data-page="about"     onclick="gotoPage('about');return false;">About</a></li>
+      <li><a href="#" class="nav-link"         data-page="services"  onclick="gotoPage('services');return false;">Services</a></li>
+      <li><a href="#" class="nav-link"         data-page="expertise" onclick="gotoPage('expertise');return false;">Expertise</a></li>
+      <li><a href="#" class="nav-link"         data-page="team"      onclick="gotoPage('team');return false;">Team</a></li>
+      <li><a href="#" class="nav-link nav-cta" data-page="contact"   onclick="gotoPage('contact');return false;">Work With Us</a></li>
+    </ul>
+
+    <div class="hamburger" id="ham" onclick="toggleMob()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<nav class="mob-nav" id="mobNav">
+  <a href="#" onclick="gotoPage('home');toggleMob();return false;">Home</a>
+  <a href="#" onclick="gotoPage('about');toggleMob();return false;">About</a>
+  <a href="#" onclick="gotoPage('services');toggleMob();return false;">Services</a>
+  <a href="#" onclick="gotoPage('expertise');toggleMob();return false;">Expertise</a>
+  <a href="#" onclick="gotoPage('team');toggleMob();return false;">Team</a>
+  <a href="#" onclick="gotoPage('contact');toggleMob();return false;">Work With Us</a>
+</nav>
+
+
+<!-- ========================================================
+     HOME PAGE
+     ======================================================== -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero geo-grid">
+    <div class="hero-glow"></div>
+    <div class="hero-accent" aria-hidden="true">
+      <svg viewBox="0 0 600 900" fill="none" preserveAspectRatio="xMaxYMid slice">
+        <line x1="0" y1="900" x2="600" y2="0" stroke="rgba(181,133,42,.07)" stroke-width="120"/>
+        <line x1="120" y1="900" x2="600" y2="200" stroke="rgba(181,133,42,.04)" stroke-width="60"/>
+        <circle cx="500" cy="200" r="280" stroke="rgba(201,212,210,.04)" stroke-width="1" fill="none"/>
+        <circle cx="500" cy="200" r="180" stroke="rgba(201,212,210,.04)" stroke-width="1" fill="none"/>
+        <circle cx="500" cy="200" r="80"  stroke="rgba(201,212,210,.04)" stroke-width="1" fill="none"/>
+      </svg>
+    </div>
+
+    <div class="wrap" style="position:relative;z-index:2;">
+      <div class="hero-content" style="padding-top:calc(var(--nav-h) + 3rem);">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-line"></span>
+          <span class="t-label">Development Consultancy &nbsp;·&nbsp; Islamabad, Pakistan</span>
+        </div>
+
+        <h1 class="hero-headline t-display">
+          Evidence<br>into <em>action.</em>
+        </h1>
+
+        <p class="hero-sub">
+          Praxis Advisory Consultants is an Islamabad-based development consultancy that turns research and policy into delivered results — across governance, climate, monitoring and evaluation, and human development.
+        </p>
+
+        <div class="hero-ctas">
+          <button class="btn btn-brass" onclick="gotoPage('contact')">
+            Work With Us
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <button class="btn btn-ghost" onclick="gotoPage('services')">
+            Our Services
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hero-scroll-bar"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- STAT BAR -->
+  <div class="stat-bar">
+    <div class="wrap-wide">
+      <div class="stat-bar-inner">
+        <div class="stat-cell">
+          <span class="stat-num">2026</span>
+          <span class="stat-lbl">Established</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">6</span>
+          <span class="stat-lbl">Practice Areas</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">22</span>
+          <span class="stat-lbl">Specialisations</span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-num">ISB</span>
+          <span class="stat-lbl">Islamabad, Pakistan</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-inner" id="marq">
+      <span class="marquee-item">UN Agencies</span>
+      <span class="marquee-item">World Bank Group</span>
+      <span class="marquee-item">Asian Development Bank</span>
+      <span class="marquee-item">GIZ</span>
+      <span class="marquee-item">FCDO</span>
+      <span class="marquee-item">European Union</span>
+      <span class="marquee-item">KfW</span>
+      <span class="marquee-item">UNDP</span>
+      <span class="marquee-item">UNEP</span>
+      <span class="marquee-item">Government of Pakistan</span>
+      <span class="marquee-item">INGOs &amp; Civil Society</span>
+      <span class="marquee-item">Diplomatic Missions</span>
+      <!-- duplicate for loop -->
+      <span class="marquee-item">UN Agencies</span>
+      <span class="marquee-item">World Bank Group</span>
+      <span class="marquee-item">Asian Development Bank</span>
+      <span class="marquee-item">GIZ</span>
+      <span class="marquee-item">FCDO</span>
+      <span class="marquee-item">European Union</span>
+      <span class="marquee-item">KfW</span>
+      <span class="marquee-item">UNDP</span>
+      <span class="marquee-item">UNEP</span>
+      <span class="marquee-item">Government of Pakistan</span>
+      <span class="marquee-item">INGOs &amp; Civil Society</span>
+      <span class="marquee-item">Diplomatic Missions</span>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="wrap">
+      <div class="intro-grid">
+        <div class="intro-left">
+          <span class="t-label reveal">Who We Are</span>
+          <hr class="brass-rule reveal" style="margin:.9rem 0 0;">
+          <h2 class="t-h2 reveal reveal-d1">The practice<br>of progress.</h2>
+        </div>
+        <div class="intro-right">
+          <p class="t-body reveal reveal-d1">
+            Praxis Advisory Consultants exists to close the gap between knowing and doing. <em>Praxis</em> — the idea, from Aristotle to development pedagogy, that knowledge matters only when it is put into action — is the principle the firm is built on.
+          </p>
+          <p class="t-body reveal reveal-d2">
+            We pair research-grade rigour with hands-on implementation. We design and evaluate programmes, draft policy, build results frameworks, lead trainings, and execute environment and governance projects on the ground. Senior specialists lead every assignment, supported by a vetted network of sectoral experts.
+          </p>
+          <button class="btn btn-petrol reveal reveal-d3" onclick="gotoPage('about')">
+            About the Firm
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES TILES -->
+  <section class="services-sect">
+    <div class="wrap">
+      <div class="sect-hdr">
+        <span class="t-label reveal">What We Do</span>
+        <h2 class="t-h2 reveal reveal-d1">Six practice areas.<br>One accountable team.</h2>
+      </div>
+      <div class="svc-grid">
+
+        <div class="svc-card reveal" onclick="gotoPage('services')">
+          <span class="svc-num">01</span>
+          <h3 class="svc-title">Policy, Governance &amp; Institutional Reform</h3>
+          <p class="svc-text">Advisory and technical assistance across the full policy cycle — from evidence synthesis and formulation through to regulatory reform and institutional strengthening.</p>
+          <span class="svc-more">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+
+        <div class="svc-card reveal reveal-d1" onclick="gotoPage('services')">
+          <span class="svc-num">02</span>
+          <h3 class="svc-title">Monitoring, Evaluation, Research &amp; Learning</h3>
+          <p class="svc-text">Full results chain coverage — theory of change, log frames, surveys, evaluations, and donor-grade analytical products across mixed-methods data collection.</p>
+          <span class="svc-more">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+
+        <div class="svc-card reveal reveal-d2" onclick="gotoPage('services')">
+          <span class="svc-num">03</span>
+          <h3 class="svc-title">Climate, Environment &amp; Sustainability</h3>
+          <p class="svc-text">Climate budgeting, NAPs, risk assessments, ESG advisory, circular economy, solid waste management, and green economy programming.</p>
+          <span class="svc-more">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+
+        <div class="svc-card reveal reveal-d3" onclick="gotoPage('services')">
+          <span class="svc-num">04</span>
+          <h3 class="svc-title">Youth, Skills &amp; Human Development</h3>
+          <p class="svc-text">TVET reform, youth employment, skills development, social protection analysis, and labour market policy at the intersection of design and delivery.</p>
+          <span class="svc-more">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+
+        <div class="svc-card reveal reveal-d4" onclick="gotoPage('services')">
+          <span class="svc-num">05</span>
+          <h3 class="svc-title">Programme Design &amp; Implementation</h3>
+          <p class="svc-text">From concept to close-out — participatory design, project planning, field coordination and results-based monitoring as prime or sub-contractor.</p>
+          <span class="svc-more">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+
+        <div class="svc-card reveal reveal-d5" onclick="gotoPage('services')">
+          <span class="svc-num">06</span>
+          <h3 class="svc-title">Knowledge, Communications &amp; Engagement</h3>
+          <p class="svc-text">Policy briefs, knowledge products, advocacy materials, stakeholder engagement, strategic communications, and donor and project reporting.</p>
+          <span class="svc-more">Explore <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY PRAXIS -->
+  <section class="why-sect geo-grid">
+    <div class="wrap">
+      <span class="t-label">Why Praxis Advisory Consultants</span>
+      <h2 class="t-h2 reveal">What sets us apart.</h2>
+      <div class="why-grid">
+        <div class="why-item reveal">
+          <h3>Advise <em>and</em> implement.</h3>
+          <p>From the results framework to the field, one accountable team. We don't hand over recommendations and walk away — we stay in the room to ensure they work.</p>
+        </div>
+        <div class="why-item reveal reveal-d2">
+          <h3>Governance and climate,<br><em>under one roof.</em></h3>
+          <p>A rare combination in Pakistan's consulting market — and one of growing importance as climate and governance challenges become structurally inseparable.</p>
+        </div>
+        <div class="why-item reveal reveal-d4">
+          <h3>Donor-grade rigour,<br><em>locally grounded.</em></h3>
+          <p>Built on direct experience inside GIZ, UNDP, UNEP, UNFPA and the Government of Pakistan. We know what international standards require — and what local context demands.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="clients-sect">
+    <div class="wrap">
+      <span class="t-label" style="display:block;">Who We Work With</span>
+      <h2 class="t-h2 reveal">Partners across the<br>development ecosystem.</h2>
+      <div class="clients-row reveal reveal-d1">
+        <div class="client-pill">UN Agencies</div>
+        <div class="client-pill">World Bank Group</div>
+        <div class="client-pill">Asian Development Bank</div>
+        <div class="client-pill">GIZ</div>
+        <div class="client-pill">KfW</div>
+        <div class="client-pill">European Union</div>
+        <div class="client-pill">FCDO</div>
+        <div class="client-pill">Diplomatic Missions</div>
+        <div class="client-pill">Government of Pakistan</div>
+        <div class="client-pill">INGOs &amp; Civil Society</div>
+        <div class="client-pill">Think Tanks &amp; Research Institutes</div>
+        <div class="client-pill">Private Sector</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="wrap">
+      <span class="t-label" style="display:block;" >Have an assignment?</span>
+      <h2 class="t-h2 reveal">Let's talk.</h2>
+      <p class="t-lead reveal reveal-d1">Whether you need an evaluation, a policy brief, a programme designed, or a complex project delivered — we bring the right expertise to the table from day one.</p>
+      <div class="reveal reveal-d2">
+        <button class="btn btn-brass" onclick="gotoPage('contact')">
+          Start a Conversation
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-home -->
+
+
+<!-- ========================================================
+     ABOUT PAGE
+     ======================================================== -->
+<div id="page-about" class="page">
+
+  <section class="pg-hero geo-grid">
+    <div class="wrap pg-hero-content">
+      <span class="t-label" style="display:block;margin-bottom:1.2rem;">About Praxis Advisory Consultants</span>
+      <h1 class="t-h1">The practice<br>of progress.</h1>
+      <p class="t-lead">We close the gap between knowing and doing — turning rigorous evidence and policy into practical, accountable results across Pakistan and the region.</p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story-sect">
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="story-aside">
+          <span class="t-label">Our Story</span>
+          <hr class="brass-rule" style="margin:.9rem 0 1.5rem;">
+          <div class="story-quote">
+            Knowledge matters only when it is put into action.
+          </div>
+        </div>
+        <div class="story-body">
+          <p class="t-body reveal">
+            Praxis Advisory Consultants was founded on a simple conviction: that the most persistent failures in development are not failures of knowledge, but failures of translation — the inability to move rigorous evidence from the report to the policy, from the policy to the programme, and from the programme to the person it was meant to serve.
+          </p>
+          <p class="t-body reveal reveal-d1">
+            The firm brings together deep experience in governance and public policy, monitoring and evaluation, climate governance, and sustainability. Our founders have worked inside the multilateral and bilateral systems — at GIZ, UNDP, UNEP, UNFPA, and government — and have seen both what works and what gets lost in translation.
+          </p>
+          <p class="t-body reveal reveal-d2">
+            Praxis Advisory Consultants was built to do both: to think rigorously and to act practically. We combine analytical depth with implementation accountability — designing and evaluating programmes, drafting policy, building results frameworks, and executing projects on the ground. Senior specialists lead every assignment, and we bring in vetted sectoral experts where the assignment demands it.
+          </p>
+          <p class="t-body reveal reveal-d3">
+            Our work spans the full policy-to-delivery chain. We believe the most durable development results come from not just knowing what works, but ensuring it gets done — with the evidence, the systems, and the accountability in place to prove it.
+          </p>
+          <div style="margin-top:2.5rem;" class="reveal reveal-d4">
+            <button class="btn btn-petrol" onclick="gotoPage('team')">
+              Meet the Team
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJECTIVES -->
+  <section class="obj-sect">
+    <div class="wrap">
+      <span class="t-label reveal">Firm Objectives</span>
+      <h2 class="t-h2 reveal reveal-d1">What we are here to do.</h2>
+      <div class="obj-grid reveal reveal-d2">
+        <div class="obj-item">
+          <span class="obj-n">01</span>
+          <p class="obj-txt">To provide policy research, analysis and development advisory services to governments, donors and development organisations.</p>
+        </div>
+        <div class="obj-item">
+          <span class="obj-n">02</span>
+          <p class="obj-txt">To design and deliver monitoring, evaluation, research and learning (MERL) assignments including evaluations, assessments and results frameworks.</p>
+        </div>
+        <div class="obj-item">
+          <span class="obj-n">03</span>
+          <p class="obj-txt">To support governance reform, institutional strengthening and public-sector accountability through technical assistance and policy advisory.</p>
+        </div>
+        <div class="obj-item">
+          <span class="obj-n">04</span>
+          <p class="obj-txt">To provide climate governance, sustainability and circular economy advisory and project execution.</p>
+        </div>
+        <div class="obj-item">
+          <span class="obj-n">05</span>
+          <p class="obj-txt">To support youth development, skills, TVET and human development programming.</p>
+        </div>
+        <div class="obj-item">
+          <span class="obj-n">06</span>
+          <p class="obj-txt">To design programmes, develop proposals and provide implementation support for donor-funded initiatives.</p>
+        </div>
+        <div class="obj-item" style="grid-column:span 2;border-right:none;">
+          <span class="obj-n">07</span>
+          <p class="obj-txt">To deliver capacity building, training, stakeholder engagement and knowledge management services.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:var(--petrol);padding:6.5rem 0;text-align:center;position:relative;overflow:hidden;" class="geo-grid">
+    <div class="wrap" style="position:relative;z-index:1;">
+      <span class="t-label" style="display:block;margin-bottom:1rem;">Work With Us</span>
+      <h2 class="t-h2 reveal" style="color:#fff;margin-bottom:1.5rem;">Ready to move from evidence to action?</h2>
+      <p class="t-lead reveal reveal-d1" style="color:rgba(201,212,210,.72);margin:0 auto 2.5rem;max-width:500px;">Let's explore how Praxis Advisory Consultants can support your next assignment.</p>
+      <button class="btn btn-brass reveal reveal-d2" onclick="gotoPage('contact')">
+        Get in Touch
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </section>
+
+</div><!-- /page-about -->
+
+
+<!-- ========================================================
+     SERVICES PAGE
+     ======================================================== -->
+<div id="page-services" class="page">
+
+  <section class="pg-hero geo-grid">
+    <div class="wrap pg-hero-content">
+      <span class="t-label" style="display:block;margin-bottom:1.2rem;">Our Services</span>
+      <h1 class="t-h1">Six practice areas,<br>one accountable team.</h1>
+      <p class="t-lead">From policy analysis to field implementation, we work across the full development value chain — always with senior specialists in the lead.</p>
+    </div>
+  </section>
+
+  <section class="svc-full-sect">
+    <div class="wrap">
+
+      <!-- 01 -->
+      <div class="svc-full-item reveal">
+        <div class="svc-aside">
+          <div class="svc-big-num">01</div>
+          <span class="t-label">Practice Area</span>
+          <h2 class="svc-aside-title">Policy, Governance &amp; Institutional Reform</h2>
+          <div class="tag-row">
+            <span class="tag">Policy Research &amp; Formulation</span>
+            <span class="tag">Governance Advisory</span>
+            <span class="tag">Institutional Reform</span>
+            <span class="tag">Public Sector Management</span>
+            <span class="tag">Regulatory Reform</span>
+            <span class="tag">Civic Engagement</span>
+          </div>
+        </div>
+        <div class="svc-body">
+          <p class="t-body">We provide analytical, advisory and technical assistance support across the policy cycle — from evidence synthesis and policy formulation, through to legal drafting, regulatory reform and institutional strengthening. Our governance work spans public sector accountability, parliamentary and judicial reform, decentralisation, and civic engagement.</p>
+          <p class="t-body">Our team has led complex governance assignments for bilateral and multilateral clients across Pakistan, designing and supporting reform processes from the federal to the local level. We understand the political economy of reform — what works in theory, what gets stuck in practice, and how to navigate the gap.</p>
+          <p class="t-body">We work as technical advisors embedded within government reform processes, and as independent evaluators assessing institutional performance. Our approach is always grounded in local context — drawing on primary research, stakeholder analysis, and deep familiarity with Pakistan's public sector landscape.</p>
+        </div>
+      </div>
+
+      <!-- 02 -->
+      <div class="svc-full-item reveal">
+        <div class="svc-aside">
+          <div class="svc-big-num">02</div>
+          <span class="t-label">Practice Area</span>
+          <h2 class="svc-aside-title">Monitoring, Evaluation, Research &amp; Learning</h2>
+          <div class="tag-row">
+            <span class="tag">M&amp;E Framework Design</span>
+            <span class="tag">Log Frame Development</span>
+            <span class="tag">Surveys &amp; Data Collection</span>
+            <span class="tag">Quantitative Analysis</span>
+            <span class="tag">Qualitative Analysis</span>
+            <span class="tag">Results-Based Monitoring</span>
+            <span class="tag">Donor Reporting</span>
+          </div>
+        </div>
+        <div class="svc-body">
+          <p class="t-body">Our MERL practice covers the full results chain: theory of change and log frame design, indicator selection, baseline and endline surveys, mid-term and final evaluations, and learning systems. We design and manage mixed-methods data collection, and produce rigorous, donor-grade analytical products — from rapid assessments to multi-year programme evaluations.</p>
+          <p class="t-body">We have designed and delivered MERL systems for programmes funded by GIZ, UNDP and other major donors. We understand both the technical requirements of results-based management and the practical realities of data collection in complex, low-resource settings.</p>
+          <p class="t-body">Our analytical capabilities span survey design and sampling, statistical analysis, and in-depth qualitative work including key informant interviews, focus groups, participatory assessments, and case studies. Every product is written to donor-grade standards and structured around decisions rather than data.</p>
+        </div>
+      </div>
+
+      <!-- 03 -->
+      <div class="svc-full-item reveal">
+        <div class="svc-aside">
+          <div class="svc-big-num">03</div>
+          <span class="t-label">Practice Area</span>
+          <h2 class="svc-aside-title">Climate, Environment &amp; Sustainability</h2>
+          <div class="tag-row">
+            <span class="tag">Climate Budgeting &amp; Governance</span>
+            <span class="tag">Climate Adaptation Plans</span>
+            <span class="tag">Climate Risk &amp; Vulnerability</span>
+            <span class="tag">ESG Advisory</span>
+            <span class="tag">Circular Economy</span>
+            <span class="tag">Textile Circularity</span>
+            <span class="tag">Solid Waste Management</span>
+            <span class="tag">Life-cycle Assessment</span>
+            <span class="tag">Green Economy &amp; Green Jobs</span>
+          </div>
+        </div>
+        <div class="svc-body">
+          <p class="t-body">We combine climate science with policy acuity. Our work covers climate budgeting and public financial management, National Adaptation Plans (NAPs), climate risk and vulnerability assessments, ESG advisory, circular economy and textile circularity, solid waste management, life-cycle assessment, and green economy and green jobs programming.</p>
+          <p class="t-body">Pakistan is among the countries most vulnerable to climate change, and our climate practice is built specifically around the challenges of the South Asian context. We have supported government counterparts, UN agencies and bilateral donors on climate mainstreaming, adaptation planning, and green economy transitions.</p>
+          <p class="t-body">Our circular economy work spans the full value chain — from policy frameworks and regulatory design through to industry engagement, producer responsibility schemes, textile circularity, and waste management system strengthening. We are among the few Pakistani firms with dedicated expertise in this area.</p>
+        </div>
+      </div>
+
+      <!-- 04 -->
+      <div class="svc-full-item reveal">
+        <div class="svc-aside">
+          <div class="svc-big-num">04</div>
+          <span class="t-label">Practice Area</span>
+          <h2 class="svc-aside-title">Youth, Skills &amp; Human Development</h2>
+          <div class="tag-row">
+            <span class="tag">Youth Employment</span>
+            <span class="tag">TVET Reform</span>
+            <span class="tag">Skills Development</span>
+            <span class="tag">Human Development</span>
+            <span class="tag">Labour Market Analysis</span>
+            <span class="tag">Social Protection</span>
+          </div>
+        </div>
+        <div class="svc-body">
+          <p class="t-body">From TVET system reform to youth employment programmes and social protection analysis, we support the full human development spectrum. We work at the intersection of policy and delivery — designing skills programmes, evaluating labour market interventions, and building frameworks that connect young people to productive opportunities.</p>
+          <p class="t-body">Our TVET work has been shaped by direct engagement with Pakistan's national skills system, including work on NAVTTC frameworks and provincial-level TVET reform. We understand the political economy of skills governance — the gaps between policy intent and delivery reality that determine whether skills programmes actually reach young people.</p>
+          <p class="t-body">We approach youth employment as a systemic challenge, not a programme problem. We analyse labour markets, map skill demands, and support the design of interventions that are grounded in employer needs and realistic about the barriers young people face in entering and sustaining productive work.</p>
+        </div>
+      </div>
+
+      <!-- 05 -->
+      <div class="svc-full-item reveal">
+        <div class="svc-aside">
+          <div class="svc-big-num">05</div>
+          <span class="t-label">Practice Area</span>
+          <h2 class="svc-aside-title">Programme Design &amp; Implementation</h2>
+          <div class="tag-row">
+            <span class="tag">Project Design</span>
+            <span class="tag">Programme Implementation</span>
+            <span class="tag">Stakeholder Analysis</span>
+            <span class="tag">Field Coordination</span>
+            <span class="tag">Results-Based Management</span>
+            <span class="tag">Adaptive Management</span>
+          </div>
+        </div>
+        <div class="svc-body">
+          <p class="t-body">We support clients from concept to close-out: participatory programme design, project planning and management, stakeholder engagement, field coordination, and results-based monitoring. We serve as prime implementers, technical advisors or sub-contractors depending on the assignment structure and client needs.</p>
+          <p class="t-body">Programme design at Praxis Advisory Consultants begins with a clear theory of change and a realistic implementation model — one that accounts for context, the capacities of implementing partners, and the political economy of the sector. We do not produce designs that work only on paper.</p>
+          <p class="t-body">Our project management practice combines formal methodology with the adaptive management approaches required in complex development settings. We manage multi-stakeholder, multi-location projects and build the monitoring and learning systems needed to detect and respond to implementation challenges in real time.</p>
+        </div>
+      </div>
+
+      <!-- 06 -->
+      <div class="svc-full-item reveal">
+        <div class="svc-aside">
+          <div class="svc-big-num">06</div>
+          <span class="t-label">Practice Area</span>
+          <h2 class="svc-aside-title">Knowledge, Communications &amp; Engagement</h2>
+          <div class="tag-row">
+            <span class="tag">Policy Research</span>
+            <span class="tag">Advocacy</span>
+            <span class="tag">Strategic Communication</span>
+            <span class="tag">Stakeholder Engagement</span>
+            <span class="tag">Donor Reporting</span>
+            <span class="tag">Knowledge Products</span>
+          </div>
+        </div>
+        <div class="svc-body">
+          <p class="t-body">Research and strategy create value only when they reach the people who need to act on them. We produce policy briefs, knowledge products and advocacy materials, and support clients with stakeholder analysis and engagement, strategic communications, and donor and project reporting.</p>
+          <p class="t-body">We translate complex analytical findings into clear, actionable policy products — writing for policymakers, programme managers and donor audiences. Our knowledge products are designed to communicate, not just report: structured around decisions, not data.</p>
+          <p class="t-body">Our stakeholder engagement work spans mapping and analysis, consultation design, advocacy strategy, and coalition building. We help clients understand who needs to be at the table, what they need to hear, and how to sustain their engagement over the life of a programme or reform process.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /page-services -->
+
+
+<!-- ========================================================
+     EXPERTISE PAGE
+     ======================================================== -->
+<div id="page-expertise" class="page">
+
+  <section class="pg-hero geo-grid">
+    <div class="wrap pg-hero-content">
+      <span class="t-label" style="display:block;margin-bottom:1.2rem;">Our Expertise</span>
+      <h1 class="t-h1">22 specialisations.<br>Deep and proven.</h1>
+      <p class="t-lead">Our technical repertoire spans the intersecting demands of modern development consultancy — from the analytical to the operational.</p>
+    </div>
+  </section>
+
+  <section class="exp-sect">
+    <div class="wrap">
+      <div class="exp-intro reveal">
+        <span class="t-label">Technical Specialisations</span>
+        <hr class="brass-rule" style="margin:.9rem 0 0;">
+        <p class="t-body" style="margin-top:1rem;">Praxis Advisory Consultants brings together a breadth of technical specialisations that rarely sit within a single firm. This is not a generalist offering — each specialisation reflects direct experience and demonstrable delivery, built across years of work inside the sector's most demanding client environments.</p>
+      </div>
+
+      <div class="exp-grid reveal reveal-d1">
+        <div class="exp-cell"><p>Monitoring &amp; Evaluation</p></div>
+        <div class="exp-cell"><p>Human &amp; Skills Development</p></div>
+        <div class="exp-cell"><p>ESG Advisory</p></div>
+        <div class="exp-cell"><p>Donor Reporting</p></div>
+        <div class="exp-cell"><p>Log Frame &amp; M&amp;E Framework Design</p></div>
+        <div class="exp-cell"><p>Surveys &amp; Data Collection</p></div>
+        <div class="exp-cell"><p>Quantitative &amp; Qualitative Analysis</p></div>
+        <div class="exp-cell"><p>Climate Budgeting &amp; Governance</p></div>
+        <div class="exp-cell"><p>Climate Adaptation Plans</p></div>
+        <div class="exp-cell"><p>Climate Risk &amp; Vulnerability Assessment</p></div>
+        <div class="exp-cell"><p>Policy Research &amp; Formulation</p></div>
+        <div class="exp-cell"><p>Textile Circularity</p></div>
+        <div class="exp-cell"><p>Circular Supply Chains</p></div>
+        <div class="exp-cell"><p>Solid Waste Management</p></div>
+        <div class="exp-cell"><p>Project Design &amp; Implementation</p></div>
+        <div class="exp-cell"><p>Life-cycle Assessment</p></div>
+        <div class="exp-cell"><p>Green Economy &amp; Green Jobs</p></div>
+        <div class="exp-cell"><p>Youth Employment</p></div>
+        <div class="exp-cell"><p>Results-Based Monitoring</p></div>
+        <div class="exp-cell"><p>Stakeholder Analysis &amp; Engagement</p></div>
+        <div class="exp-cell"><p>Advocacy &amp; Strategic Communication</p></div>
+        <div class="exp-cell"><p>Donor &amp; Project Reporting</p></div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-expertise -->
+
+
+<!-- ========================================================
+     TEAM PAGE
+     ======================================================== -->
+<div id="page-team" class="page">
+
+  <section class="pg-hero geo-grid">
+    <div class="wrap pg-hero-content">
+      <span class="t-label" style="display:block;margin-bottom:1.2rem;">Our Team</span>
+      <h1 class="t-h1">Senior specialists<br>in the lead.</h1>
+      <p class="t-lead">Every Praxis assignment is led by a principal with direct sectoral experience. We do not delegate the thinking to junior staff or rely on generalist project management.</p>
+    </div>
+  </section>
+
+  <section class="team-sect">
+    <div class="wrap">
+
+      <div class="team-intro reveal">
+        <span class="t-label">The Founding Principals</span>
+        <hr class="brass-rule" style="margin:.9rem 0 0;">
+        <p class="t-body" style="margin-top:1rem;">Praxis Advisory Consultants was co-founded by two specialists who have spent their careers at the intersection of research, policy and implementation — inside the multilateral and bilateral system, inside government, and across Pakistan's development sector.</p>
+      </div>
+
+      <div class="team-grid">
+
+        <!-- Ahmad -->
+        <div class="team-card reveal">
+          <div class="team-card-header">
+            <div class="team-card-geo" aria-hidden="true">
+              <svg viewBox="0 0 130 130" fill="none">
+                <rect x="10" y="10" width="40" height="40" stroke="white" stroke-width="1.2"/>
+                <rect x="80" y="10" width="40" height="40" stroke="white" stroke-width="1.2"/>
+                <rect x="45" y="45" width="40" height="40" stroke="white" stroke-width="1.2"/>
+                <rect x="10" y="80" width="40" height="40" stroke="white" stroke-width="1.2"/>
+                <rect x="80" y="80" width="40" height="40" stroke="white" stroke-width="1.2"/>
+              </svg>
+            </div>
+            <h2 class="team-pname">Ahmad Saleem</h2>
+            <span class="team-ptitle">Managing Director</span>
+          </div>
+          <div class="team-card-body">
+            <p class="team-bio">Ahmad Saleem is a governance, policy and MERL specialist with over a decade of experience in Pakistan's development sector. He has led complex assignments for GIZ, UNDP and the Government of Pakistan in areas including TVET reform, public sector management, local governance and results-based monitoring.</p>
+            <p class="team-bio">His work combines political economy analysis with practical delivery — navigating the institutional complexity that separates policy intent from programme results. Ahmad's approach to governance is shaped by direct experience inside the systems he advises.</p>
+            <div class="team-tags">
+              <span class="team-tag">Governance &amp; Policy</span>
+              <span class="team-tag">MERL</span>
+              <span class="team-tag">TVET Reform</span>
+              <span class="team-tag">Public Sector Management</span>
+              <span class="team-tag">GIZ · UNDP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amna -->
+        <div class="team-card reveal reveal-d2">
+          <div class="team-card-header">
+            <div class="team-card-geo" aria-hidden="true">
+              <svg viewBox="0 0 130 130" fill="none">
+                <circle cx="65" cy="65" r="52" stroke="white" stroke-width="1.2"/>
+                <circle cx="65" cy="65" r="35" stroke="white" stroke-width="1.2"/>
+                <circle cx="65" cy="65" r="18" stroke="white" stroke-width="1.2"/>
+                <line x1="13" y1="65" x2="117" y2="65" stroke="white" stroke-width="1.2"/>
+                <line x1="65" y1="13" x2="65" y2="117" stroke="white" stroke-width="1.2"/>
+              </svg>
+            </div>
+            <h2 class="team-pname">Amna Urooj</h2>
+            <span class="team-ptitle">Executive Director</span>
+          </div>
+          <div class="team-card-body">
+            <p class="team-bio">Amna Urooj is a climate governance and sustainability specialist with cross-cutting expertise in circular economy, policy research and environmental programming. She has worked with SDPI, UNEP and UNFPA on assignments spanning climate adaptation planning, solid waste management, ESG advisory and gender-responsive environmental policy.</p>
+            <p class="team-bio">Her approach integrates systems thinking with evidence-based advocacy, and her work has shaped policy positions at national and international levels. Amna brings a rare ability to combine technical depth with the policy acuity to make findings actionable.</p>
+            <div class="team-tags">
+              <span class="team-tag">Climate Governance</span>
+              <span class="team-tag">Circular Economy</span>
+              <span class="team-tag">Sustainability</span>
+              <span class="team-tag">ESG Advisory</span>
+              <span class="team-tag">SDPI · UNEP · UNFPA</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Associate model -->
+      <div class="associate-box reveal reveal-d1">
+        <span class="t-label">Our Delivery Model</span>
+        <h3>The associate model.</h3>
+        <p>For assignments requiring specialist depth beyond our principal expertise — in health, WASH, energy, social protection, statistics and other sectors — we work with a vetted network of associate experts engaged on an assignment-by-assignment basis. This gives clients access to the right expertise for each task, without the overhead of a large permanent team. All associates operate under our ethics, safeguarding, data protection and quality assurance standards.</p>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /page-team -->
+
+
+<!-- ========================================================
+     CONTACT PAGE
+     ======================================================== -->
+<div id="page-contact" class="page">
+
+  <section class="pg-hero geo-grid">
+    <div class="wrap pg-hero-content">
+      <span class="t-label" style="display:block;margin-bottom:1.2rem;">Contact</span>
+      <h1 class="t-h1">Let's work<br>together.</h1>
+      <p class="t-lead">Whether you have an assignment to tender, a programme to evaluate, or just want to explore how we can support your work — we'd like to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="contact-sect">
+    <div class="wrap">
+      <div class="contact-grid">
+
+        <!-- Info -->
+        <div class="contact-info reveal">
+          <h3>Get in touch</h3>
+          <p>We respond to all enquiries within two business days. For procurements and tenders, we are registered for UN and bilateral donor procurement systems.</p>
+
+          <div class="c-row">
+            <div class="c-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            </div>
+            <div>
+              <div class="c-lbl">General Enquiries</div>
+              <div class="c-val"><a href="mailto:info@praxisadv.org">info@praxisadv.org</a></div>
+            </div>
+          </div>
+
+          <div class="c-row">
+            <div class="c-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            </div>
+            <div>
+              <div class="c-lbl">Ahmad Saleem — Managing Director</div>
+              <div class="c-val"><a href="mailto:ahmad@praxisadv.org">ahmad@praxisadv.org</a></div>
+            </div>
+          </div>
+
+          <div class="c-row">
+            <div class="c-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            </div>
+            <div>
+              <div class="c-lbl">Amna Urooj — Executive Director</div>
+              <div class="c-val"><a href="mailto:amna@praxisadv.org">amna@praxisadv.org</a></div>
+            </div>
+          </div>
+
+          <div class="c-row">
+            <div class="c-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+            </div>
+            <div>
+              <div class="c-lbl">Location</div>
+              <div class="c-val">Islamabad, Pakistan</div>
+            </div>
+          </div>
+
+          <div class="c-row">
+            <div class="c-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+            </div>
+            <div>
+              <div class="c-lbl">Website</div>
+              <div class="c-val"><a href="https://www.praxisadv.org">www.praxisadv.org</a></div>
+            </div>
+          </div>
+
+          <div class="c-row">
+            <div class="c-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="stroke:none;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div>
+              <div class="c-lbl">LinkedIn</div>
+              <div class="c-val"><a href="https://linkedin.com/company/praxis-advisory-consultants" target="_blank">linkedin.com/company/praxis-advisory-consultants</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form-wrap reveal reveal-d2">
+          <span class="t-label" style="display:block;margin-bottom:1.75rem;">Send an Enquiry</span>
+          <div class="form-row2">
+            <div class="f-grp">
+              <label class="f-lbl">First Name</label>
+              <input type="text" class="f-in" placeholder="First name">
+            </div>
+            <div class="f-grp">
+              <label class="f-lbl">Last Name</label>
+              <input type="text" class="f-in" placeholder="Last name">
+            </div>
+          </div>
+          <div class="f-grp">
+            <label class="f-lbl">Organisation</label>
+            <input type="text" class="f-in" placeholder="Your organisation">
+          </div>
+          <div class="f-grp">
+            <label class="f-lbl">Email Address</label>
+            <input type="email" class="f-in" placeholder="you@organisation.org">
+          </div>
+          <div class="f-grp">
+            <label class="f-lbl">Type of Enquiry</label>
+            <select class="f-sel">
+              <option value="">Select enquiry type&hellip;</option>
+              <option>Project or Assignment</option>
+              <option>Evaluation or Assessment</option>
+              <option>Policy Advisory</option>
+              <option>Climate &amp; Environment</option>
+              <option>Training &amp; Capacity Building</option>
+              <option>Partnership or Collaboration</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="f-grp">
+            <label class="f-lbl">Message</label>
+            <textarea class="f-ta" placeholder="Briefly describe your assignment or enquiry…"></textarea>
+          </div>
+          <button class="f-submit" id="fSubmit" onclick="submitForm(event)">
+            Send Enquiry &rarr;
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div><!-- /page-contact -->
+
+
+<!-- ========================================================
+     FOOTER
+     ======================================================== -->
+<footer class="footer geo-grid">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="ft-name">Praxis Advisory Consultants</div>
+        <span class="ft-tag">Evidence into Action · praxisadv.org</span>
+        <div class="ft-tagline">Evidence into action.</div>
+        <p class="ft-desc">An Islamabad-based development consultancy turning rigorous evidence and policy into delivered results across governance, climate, MERL and human development.</p>
+      </div>
+      <div>
+        <p class="ft-col-head">Navigation</p>
+        <ul class="ft-links">
+          <li><a href="#" onclick="gotoPage('home');return false;">Home</a></li>
+          <li><a href="#" onclick="gotoPage('about');return false;">About</a></li>
+          <li><a href="#" onclick="gotoPage('services');return false;">Services</a></li>
+          <li><a href="#" onclick="gotoPage('expertise');return false;">Expertise</a></li>
+          <li><a href="#" onclick="gotoPage('team');return false;">Our Team</a></li>
+          <li><a href="#" onclick="gotoPage('contact');return false;">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="ft-col-head">Practice Areas</p>
+        <ul class="ft-links">
+          <li><a href="#" onclick="gotoPage('services');return false;">Policy &amp; Governance</a></li>
+          <li><a href="#" onclick="gotoPage('services');return false;">MERL</a></li>
+          <li><a href="#" onclick="gotoPage('services');return false;">Climate &amp; Environment</a></li>
+          <li><a href="#" onclick="gotoPage('services');return false;">Youth &amp; Skills</a></li>
+          <li><a href="#" onclick="gotoPage('services');return false;">Programme Design</a></li>
+          <li><a href="#" onclick="gotoPage('services');return false;">Knowledge &amp; Comms</a></li>
+        </ul>
+      </div>
+      <div class="ft-contact">
+        <p class="ft-col-head">Contact</p>
+        <p><a href="mailto:info@praxisadv.org">info@praxisadv.org</a></p>
+        <p><a href="mailto:ahmad@praxisadv.org">ahmad@praxisadv.org</a></p>
+        <p><a href="mailto:amna@praxisadv.org">amna@praxisadv.org</a></p>
+        <p style="margin-top:1.1rem;">Islamabad, Pakistan</p>
+        <p><a href="https://www.praxisadv.org">www.praxisadv.org</a></p>
+        <p style="margin-top:1.1rem;"><a href="https://linkedin.com/company/praxis-advisory-consultants" target="_blank">LinkedIn</a></p>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span class="ft-copy">&copy; 2026 Praxis Advisory Consultants. All rights reserved. Islamabad, Pakistan.</span>
+      <div class="ft-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Safeguarding</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ========================================================
+     JAVASCRIPT
+     ======================================================== -->
+<script>
+// ---- Page navigation ----
+function gotoPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const pg = document.getElementById('page-' + id);
+  if (pg) pg.classList.add('active');
+
+  // Nav active state
+  document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
+  const link = document.querySelector(`.nav-link[data-page="${id}"]`);
+  if (link) link.classList.add('active');
+
+  // Scroll to top
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Nav style
+  const nav = document.getElementById('mainNav');
+  if (id === 'home') {
+    nav.classList.remove('opaque');
+  } else {
+    nav.classList.add('opaque');
+  }
+
+  // Trigger reveal animations
+  setTimeout(runReveals, 120);
+}
+
+// ---- Scroll: transparent → opaque nav on home ----
+window.addEventListener('scroll', () => {
+  const activePg = document.querySelector('.page.active');
+  if (!activePg || activePg.id !== 'page-home') return;
+  const nav = document.getElementById('mainNav');
+  nav.classList.toggle('opaque', window.scrollY > 72);
+}, { passive: true });
+
+// ---- Mobile menu ----
+function toggleMob() {
+  document.getElementById('mobNav').classList.toggle('open');
+}
+
+// ---- Reveal on scroll ----
+function runReveals() {
+  const els = document.querySelectorAll('.page.active .reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  els.forEach(el => { el.classList.remove('in-view'); obs.observe(el); });
+}
+
+// Kick off immediately for home
+window.addEventListener('load', () => {
+  runReveals();
+  // Reveal any already-visible elements
+  setTimeout(() => {
+    document.querySelectorAll('.page.active .reveal').forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight - 40) el.classList.add('in-view');
+    });
+  }, 200);
+});
+
+// ---- Contact form ----
+function submitForm(e) {
+  e.preventDefault();
+  const btn = document.getElementById('fSubmit');
+  btn.textContent = 'Message sent — we\'ll be in touch shortly. ✓';
+  btn.style.background = 'var(--brass)';
+  btn.disabled = true;
+  btn.style.cursor = 'default';
+}
+</script>
+
+</body>
+</html>
