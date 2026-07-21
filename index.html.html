@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>LA-39 Jammu-6 · Electorate Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;500;700&family=Noto+Naskh+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16211C; --paper:#EAEDE7; --surface:#FFFFFF; --surface-2:#F4F6F1;
+  --green:#0E5A3B; --green-d:#0A3E29; --green-l:#15764C;
+  --saffron:#DB8419; --saffron-l:#F0A83A; --saffron-bg:#FBF1DF;
+  --danger:#B23A2E; --danger-bg:#F8E7E4;
+  --info:#2A6F97; --info-bg:#E4EEF3;
+  --line:rgba(20,45,32,.12); --line-2:rgba(20,45,32,.07);
+  --muted:#5A6A61; --muted-2:#8A968E;
+  --disp:'Space Grotesk',sans-serif; --body:'Inter',sans-serif;
+  --mono:'Space Mono',monospace; --urdu:'Noto Nastaliq Urdu','Noto Naskh Arabic',serif;
+  --r:14px; --r-s:9px; --sh:0 1px 2px rgba(16,40,28,.05),0 8px 24px -12px rgba(16,40,28,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);
+  font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(circle at 12% -8%,rgba(14,90,59,.06),transparent 42%),radial-gradient(circle at 92% 0%,rgba(219,132,25,.05),transparent 40%);
+  background-attachment:fixed;min-height:100vh}
+.mono{font-family:var(--mono)} .ur{font-family:var(--urdu);direction:rtl}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input{font-family:inherit}
+::selection{background:var(--saffron-l);color:var(--ink)}
+
+/* ---------- MASTHEAD ---------- */
+.mast{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,var(--green-d),var(--green));
+  color:#EAF3EE;border-bottom:3px solid var(--saffron)}
+.mast-in{max-width:1240px;margin:0 auto;padding:13px 22px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.crest{width:42px;height:42px;flex-shrink:0;border-radius:9px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);display:grid;place-items:center;position:relative;overflow:hidden}
+.crest svg{width:26px;height:26px}
+.seat h1{font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:.01em;line-height:1;color:#fff}
+.seat .sub{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#A9CDBB;margin-top:4px}
+.seat .cand{font-size:12.5px;color:#E7F1EB;margin-top:5px}
+.seat .cand b{color:#fff;font-weight:600} .seat .cand .ur{font-size:14px}
+.mast-right{margin-left:auto;display:flex;gap:10px;align-items:stretch}
+.mchip{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:10px;
+  padding:7px 13px;text-align:center;min-width:74px}
+.mchip .n{font-family:var(--disp);font-weight:600;font-size:20px;line-height:1;color:#fff}
+.mchip .l{font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:#9EC6B2;margin-top:4px}
+.mchip.poll{background:var(--saffron);border-color:var(--saffron-l)}
+.mchip.poll .n{color:#241203}.mchip.poll .l{color:#5c3608}
+
+/* ---------- NAV ---------- */
+.nav{position:sticky;top:0;z-index:30;background:rgba(234,237,231,.86);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line)}
+.nav-in{max-width:1240px;margin:0 auto;padding:0 22px;display:flex;gap:2px;align-items:center}
+.tab{padding:13px 16px 11px;font-size:13px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;
+  display:flex;align-items:center;gap:7px;white-space:nowrap;transition:color .15s}
+.tab:hover{color:var(--ink)}
+.tab.on{color:var(--green);border-bottom-color:var(--saffron);font-weight:600}
+.tab .ic{width:15px;height:15px;stroke-width:1.8}
+.nav-tag{margin-left:auto;font-size:10.5px;color:var(--muted-2);letter-spacing:.04em;display:flex;align-items:center;gap:6px}
+.dotlive{width:6px;height:6px;border-radius:50%;background:var(--green-l);box-shadow:0 0 0 3px rgba(21,118,76,.16)}
+
+/* ---------- LAYOUT ---------- */
+.wrap{max-width:1240px;margin:0 auto;padding:22px}
+.view{display:none} .view.on{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh)}
+.ct{font-size:10.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+  display:flex;align-items:center;gap:8px}
+.ct .tick{width:3px;height:12px;background:var(--saffron);border-radius:2px}
+
+/* ---------- KPI ---------- */
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px;position:relative;overflow:hidden}
+.kpi::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--green)}
+.kpi.k-reach::before{background:var(--info)} .kpi.k-fem::before{background:var(--saffron)}
+.kpi.k-blk::before{background:var(--green-l)} .kpi.k-dist::before{background:var(--muted)}
+.kpi .kl{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.kpi .kv{font-family:var(--disp);font-weight:600;font-size:30px;line-height:.95;color:var(--ink);letter-spacing:-.01em}
+.kpi .ks{font-size:11px;color:var(--muted-2);margin-top:6px}
+.kpi .ks b{color:var(--green);font-weight:600}
+
+/* ---------- SIGNATURE: DISTRICT COMMAND BAND ---------- */
+.band-card{padding:18px 20px 20px;margin-bottom:18px}
+.band-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:15px;gap:16px;flex-wrap:wrap}
+.band-head .ct{margin-bottom:4px}
+.band-note{font-size:11.5px;color:var(--muted);max-width:340px;text-align:right}
+.band{display:flex;height:82px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--surface-2)}
+.seg{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:0;overflow:hidden;
+  border-right:1px solid rgba(255,255,255,.5);cursor:default;transition:flex-basis .8s cubic-bezier(.2,.8,.2,1)}
+.seg:last-child{border-right:none}
+.seg .fill{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(42,111,151,.16),rgba(42,111,151,.32));
+  transition:height 1s cubic-bezier(.2,.8,.2,1)}
+.seg .lab{position:relative;padding:8px 9px;z-index:2}
+.seg .lab .dn{font-size:11px;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seg .lab .dv{font-family:var(--disp);font-weight:600;font-size:15px;color:var(--green-d);line-height:1;margin-top:2px}
+.seg .lab .dp{font-size:9.5px;color:var(--info);margin-top:2px;font-family:var(--mono)}
+.seg .role{position:absolute;top:0;left:0;right:0;height:4px}
+.seg.r-margin .role{background:var(--saffron)} .seg.r-defend .role{background:var(--green-l)}
+.seg.r-watch .role{background:var(--danger)} .seg.r-sec .role{background:var(--muted-2)}
+.seg:hover{background:var(--surface)}
+.band-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:11px;color:var(--muted)}
+.band-legend span{display:flex;align-items:center;gap:6px}
+.lg{width:11px;height:4px;border-radius:2px;display:inline-block}
+.lg.reach{height:11px;width:11px;border-radius:3px;background:linear-gradient(180deg,rgba(42,111,151,.2),rgba(42,111,151,.4))}
+
+/* ---------- GRID PANELS ---------- */
+.grid2{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;margin-bottom:18px}
+.grid2b{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.pad{padding:16px 18px}
+.dtable{width:100%;border-collapse:collapse;font-size:12.5px}
+.dtable th{text-align:left;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);
+  font-weight:600;padding:0 8px 9px;border-bottom:1px solid var(--line)}
+.dtable th.num,.dtable td.num{text-align:right;font-family:var(--mono)}
+.dtable td{padding:9px 8px;border-bottom:1px solid var(--line-2)}
+.dtable tr:last-child td{border-bottom:none}
+.dtable tr.clickable{cursor:pointer}.dtable tr.clickable:hover td{background:var(--surface-2)}
+.dname{font-weight:600;display:flex;align-items:center;gap:8px}
+.ddot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.minibar{height:5px;background:var(--surface-2);border-radius:3px;overflow:hidden;min-width:52px;margin-top:4px}
+.minibar i{display:block;height:100%;border-radius:3px;background:var(--green)}
+.reachpill{font-family:var(--mono);font-size:11px;padding:2px 7px;border-radius:20px;background:var(--info-bg);color:var(--info);font-weight:700}
+
+/* donut + reach */
+.split{display:flex;align-items:center;gap:20px}
+.donut{position:relative;width:132px;height:132px;flex-shrink:0}
+.donut .mid{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.donut .mid .n{font-family:var(--disp);font-weight:600;font-size:22px;color:var(--ink);line-height:1}
+.donut .mid .l{font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.leg{flex:1;display:flex;flex-direction:column;gap:12px}
+.leg .row{display:flex;align-items:center;gap:10px}
+.leg .sw{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+.leg .tx{flex:1}.leg .tx .a{font-size:12.5px;font-weight:600}.leg .tx .b{font-size:11px;color:var(--muted)}
+.leg .vv{font-family:var(--disp);font-weight:600;font-size:17px}
+.reachwrap{margin-top:6px}
+.reachbar{height:34px;border-radius:9px;background:var(--surface-2);overflow:hidden;display:flex;border:1px solid var(--line)}
+.reachbar .on{background:linear-gradient(180deg,var(--info),#1f5a7c);display:flex;align-items:center;padding-left:12px;
+  color:#fff;font-family:var(--disp);font-weight:600;font-size:13px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.reachbar .off{flex:1;display:flex;align-items:center;justify-content:flex-end;padding-right:12px;color:var(--muted);font-size:12px}
+.reachsub{display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:var(--muted)}
+.reachsub b{color:var(--info);font-family:var(--mono)}
+
+/* strategy strip */
+.strat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:6px}
+.si{border-radius:var(--r);padding:13px 14px;font-size:11.5px;line-height:1.55;border:1px solid}
+.si .h{font-weight:700;font-size:11px;letter-spacing:.03em;margin-bottom:5px;display:flex;align-items:center;gap:6px}
+.si.g{background:#E9F3ED;border-color:#BFE0CC;color:#0d4e32}.si.g .h{color:var(--green-d)}
+.si.a{background:var(--saffron-bg);border-color:#EAD3A6;color:#7a4d0e}.si.a .h{color:#8a570d}
+.si.r{background:var(--danger-bg);border-color:#E9C4BE;color:#8f2d23}.si.r .h{color:var(--danger)}
+.si.b{background:var(--info-bg);border-color:#BFD8E4;color:#1f5673}.si.b .h{color:var(--info)}
+.si b{font-weight:700}
+.src{font-size:10.5px;color:var(--muted-2);margin-top:12px;text-align:center}
+
+/* ---------- VOTER ROLL ---------- */
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.search{flex:1;min-width:240px;position:relative}
+.search input{width:100%;padding:11px 14px 11px 40px;border:1px solid var(--line);border-radius:10px;
+  background:var(--surface);font-size:13.5px;color:var(--ink);outline:none;transition:border .15s,box-shadow .15s}
+.search input:focus{border-color:var(--green-l);box-shadow:0 0 0 3px rgba(21,118,76,.12)}
+.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:16px;height:16px;stroke:var(--muted-2)}
+.sel{position:relative}
+.sel select{appearance:none;padding:10px 30px 10px 13px;border:1px solid var(--line);border-radius:10px;
+  background:var(--surface);font-size:12.5px;color:var(--ink);outline:none;cursor:pointer}
+.sel::after{content:"▾";position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:10px;pointer-events:none}
+.chk{display:flex;align-items:center;gap:7px;padding:9px 13px;border:1px solid var(--line);border-radius:10px;
+  background:var(--surface);font-size:12.5px;color:var(--ink);user-select:none}
+.chk input{accent-color:var(--green)}
+.btn{padding:10px 15px;border-radius:10px;background:var(--green);color:#fff;font-size:12.5px;font-weight:600;
+  display:flex;align-items:center;gap:7px;transition:background .15s}
+.btn:hover{background:var(--green-d)}.btn svg{width:14px;height:14px;stroke:#fff}
+.btn.ghost{background:var(--surface);color:var(--green);border:1px solid var(--green)}.btn.ghost svg{stroke:var(--green)}
+.btn.ghost:hover{background:var(--surface-2)}
+.btn.warn{background:var(--saffron)}.btn.warn:hover{background:#c4740f}
+
+.rollmeta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+.rollmeta .cnt{font-size:12.5px;color:var(--muted)}.rollmeta .cnt b{color:var(--ink);font-family:var(--disp);font-weight:600}
+.activefilters{display:flex;gap:6px;flex-wrap:wrap}
+.fchip{font-size:11px;background:var(--surface-2);border:1px solid var(--line);border-radius:20px;padding:3px 9px 3px 11px;
+  display:flex;align-items:center;gap:6px;color:var(--ink)}
+.fchip button{color:var(--muted);font-size:13px;line-height:1;width:14px;height:14px}
+.fchip button:hover{color:var(--danger)}
+
+.vtable{width:100%;border-collapse:collapse;font-size:12.5px;background:var(--surface);border-radius:var(--r);overflow:hidden;
+  border:1px solid var(--line);box-shadow:var(--sh)}
+.vtable thead th{position:sticky;top:52px;background:var(--surface-2);z-index:5}
+.vtable th{text-align:left;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);
+  font-weight:600;padding:11px 12px;border-bottom:1px solid var(--line)}
+.vtable td{padding:11px 12px;border-bottom:1px solid var(--line-2);vertical-align:middle}
+.vtable tr:last-child td{border-bottom:none}
+.vtable tbody tr{cursor:pointer;transition:background .1s}
+.vtable tbody tr:hover{background:var(--surface-2)}
+.vnum{color:var(--muted-2);font-family:var(--mono);font-size:11px;width:38px}
+.vname{max-width:0;width:44%}
+.vname .nm{font-family:var(--urdu);direction:rtl;font-size:16px;line-height:1.7;color:var(--ink);
+  display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gtag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;white-space:nowrap}
+.gtag.m{background:var(--info-bg);color:var(--info)}.gtag.f{background:var(--saffron-bg);color:#8a570d}
+.cnic{font-family:var(--mono);font-size:11.5px;color:var(--ink);letter-spacing:-.02em}
+.phcell{font-family:var(--mono);font-size:11.5px}
+.phcell .no{color:var(--muted-2)}
+.phcell .yes{color:var(--info);font-weight:700}
+.phcnt{font-size:9.5px;color:var(--muted-2);margin-left:4px}
+.dpill{font-size:10.5px;padding:2px 8px;border-radius:6px;background:var(--surface-2);color:var(--muted);white-space:nowrap}
+.blkcode{font-family:var(--mono);font-size:11px;color:var(--green);font-weight:700}
+
+.pager{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:10px;flex-wrap:wrap}
+.pgbtns{display:flex;gap:4px;align-items:center}
+.pgb{width:34px;height:34px;border-radius:9px;border:1px solid var(--line);background:var(--surface);
+  display:grid;place-items:center;font-size:13px;color:var(--ink);font-family:var(--mono)}
+.pgb:hover:not(:disabled){border-color:var(--green-l);color:var(--green)}
+.pgb:disabled{opacity:.4;cursor:default}
+.pgb.cur{background:var(--green);color:#fff;border-color:var(--green)}
+.pginfo{font-size:12px;color:var(--muted)}.pginfo b{color:var(--ink)}
+.pgsize{margin-left:8px}
+
+.empty{text-align:center;padding:60px 20px;color:var(--muted)}
+.empty svg{width:40px;height:40px;stroke:var(--muted-2);margin-bottom:12px}
+.empty .t{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:4px}
+
+/* ---------- DETAIL DRAWER ---------- */
+.scrim{position:fixed;inset:0;background:rgba(12,28,20,.42);backdrop-filter:blur(2px);z-index:60;opacity:0;
+  pointer-events:none;transition:opacity .25s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,94vw);background:var(--paper);z-index:61;
+  transform:translateX(102%);transition:transform .32s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column;
+  box-shadow:-16px 0 40px -20px rgba(0,0,0,.4)}
+.drawer.on{transform:none}
+.dw-head{background:linear-gradient(160deg,var(--green-d),var(--green));color:#fff;padding:20px 22px 22px;flex-shrink:0}
+.dw-head .close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;
+  background:rgba(255,255,255,.12);display:grid;place-items:center}
+.dw-head .close:hover{background:rgba(255,255,255,.22)}
+.dw-head .eyebrow{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#A9CDBB}
+.dw-head .vn{font-family:var(--urdu);direction:rtl;font-size:26px;line-height:1.7;margin-top:8px;color:#fff}
+.dw-head .meta{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.dw-head .mtag{font-size:10.5px;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,.14);color:#EAF3EE}
+.dw-body{flex:1;overflow-y:auto;padding:18px 22px 30px}
+.field{margin-bottom:16px}
+.field .fl{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.field .fv{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:13.5px}
+.field .fv.mono{font-family:var(--mono);letter-spacing:.01em}
+.reveal{font-size:10px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--saffron);
+  border:1px solid var(--saffron);border-radius:20px;padding:2px 9px;margin-left:auto}
+.reveal:hover{background:var(--saffron);color:#fff}
+.masked{color:var(--muted-2)}
+.phlist{display:flex;flex-direction:column;gap:8px}
+.phline{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 13px}
+.phline .pi{width:14px;height:14px;stroke:var(--info);flex-shrink:0}
+.phline .pn{font-family:var(--mono);font-size:13.5px;flex:1}
+.phline .wa{width:26px;height:26px;border-radius:7px;background:#25D366;display:grid;place-items:center}
+.phline .wa svg{width:15px;height:15px;fill:#fff}
+.rawname{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:13px 15px;
+  font-family:var(--urdu);direction:rtl;font-size:16px;line-height:2;color:var(--ink)}
+.fullrec{font-size:10.5px;color:var(--muted-2);margin-top:2px}
+
+/* ---------- BLOCKS ---------- */
+.blkgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.blk{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 15px;cursor:pointer;
+  transition:transform .12s,box-shadow .12s,border-color .12s}
+.blk:hover{transform:translateY(-2px);box-shadow:var(--sh);border-color:var(--green-l)}
+.blk .top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+.blk .code{font-family:var(--mono);font-weight:700;font-size:15px;color:var(--green)}
+.blk .dpill2{font-size:10px;padding:2px 9px;border-radius:20px;background:var(--surface-2);color:var(--muted);border:1px solid var(--line)}
+.blk .big{font-family:var(--disp);font-weight:600;font-size:26px;color:var(--ink);line-height:1}
+.blk .big span{font-size:12px;color:var(--muted);font-weight:400;font-family:var(--body)}
+.blk .mf{display:flex;gap:5px;margin-top:11px;height:6px;border-radius:3px;overflow:hidden}
+.blk .mf .mm{background:var(--info)}.blk .mf .ff{background:var(--saffron)}
+.blk .foot{display:flex;justify-content:space-between;margin-top:9px;font-size:10.5px;color:var(--muted)}
+.blk .foot .r{color:var(--info);font-family:var(--mono);font-weight:700}
+
+/* ---------- GATE ---------- */
+.gate{position:fixed;inset:0;z-index:80;background:linear-gradient(160deg,#0A3E29,#0E5A3B 60%,#0c4d34);
+  display:grid;place-items:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
+.gate.on{opacity:1;pointer-events:auto}
+.gate-box{background:var(--surface);border-radius:18px;padding:34px 30px;max-width:400px;width:100%;
+  box-shadow:0 30px 80px -20px rgba(0,0,0,.5);text-align:center}
+.gate-box .lock{width:52px;height:52px;border-radius:14px;background:var(--saffron-bg);display:grid;place-items:center;margin:0 auto 18px}
+.gate-box .lock svg{width:26px;height:26px;stroke:var(--saffron)}
+.gate-box h2{font-family:var(--disp);font-size:20px;font-weight:600;margin-bottom:7px}
+.gate-box p{font-size:12.5px;color:var(--muted);line-height:1.55;margin-bottom:20px}
+.gate-box input{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:11px;font-size:15px;
+  text-align:center;letter-spacing:.05em;outline:none;font-family:var(--mono);margin-bottom:12px}
+.gate-box input:focus{border-color:var(--green-l);box-shadow:0 0 0 3px rgba(21,118,76,.14)}
+.gate-box .err{color:var(--danger);font-size:12px;height:16px;margin-bottom:8px}
+.gate-box .go{width:100%;padding:13px;background:var(--green);color:#fff;border-radius:11px;font-weight:600;font-size:14px}
+.gate-box .go:hover{background:var(--green-d)}
+.gate-box .note{font-size:10.5px;color:var(--muted-2);margin-top:16px;line-height:1.5}
+
+/* privacy banner */
+.pbanner{max-width:1240px;margin:14px auto 0;padding:0 22px}
+.pbanner .in{background:var(--saffron-bg);border:1px solid #EAD3A6;border-radius:11px;padding:10px 15px;
+  font-size:11.5px;color:#7a4d0e;line-height:1.5;display:flex;gap:10px;align-items:flex-start}
+.pbanner svg{width:15px;height:15px;stroke:var(--saffron);flex-shrink:0;margin-top:1px}
+.pbanner b{font-weight:700}
+
+.foot-note{max-width:1240px;margin:26px auto 40px;padding:0 22px;font-size:11px;color:var(--muted-2);line-height:1.6;text-align:center}
+.foot-note b{color:var(--muted)}
+
+/* loading */
+#load{position:fixed;inset:0;background:var(--paper);z-index:90;display:grid;place-items:center;transition:opacity .4s}
+#load.done{opacity:0;pointer-events:none}
+.spin{width:38px;height:38px;border:3px solid var(--line);border-top-color:var(--green);border-radius:50%;animation:sp .7s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+#load .lt{margin-top:16px;font-size:12px;color:var(--muted);letter-spacing:.04em}
+
+@media(max-width:980px){
+  .kpis{grid-template-columns:repeat(3,1fr)} .grid2,.grid2b{grid-template-columns:1fr}
+  .strat{grid-template-columns:1fr 1fr}
+  .seg .lab .dn{font-size:10px}
+}
+@media(max-width:640px){
+  .wrap{padding:14px}.mast-in{padding:11px 14px;gap:12px}.nav-in{padding:0 10px}
+  .kpis{grid-template-columns:1fr 1fr;gap:9px}.kpi .kv{font-size:24px}
+  .strat{grid-template-columns:1fr}.seat h1{font-size:16px}
+  .band{height:100px}.seg .lab .dv{font-size:13px}
+  .mast-right{width:100%;justify-content:flex-start}
+  .vtable .hide-sm{display:none}.tab{padding:12px 10px}
+  .seg .lab .dn{writing-mode:vertical-rl;transform:rotate(180deg);margin-bottom:6px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div id="load"><div style="text-align:center"><div class="spin" style="margin:0 auto"></div><div class="lt">Loading electoral roll…</div></div></div>
+
+<!-- MASTHEAD -->
+<header class="mast">
+  <div class="mast-in">
+    <div class="crest" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6H21l-5.3 4 2 6.4L12 15l-5.7 4 2-6.4L3 8.6h6.6L12 2z" fill="#F0A83A"/><circle cx="12" cy="12" r="10.5" stroke="#EAF3EE" stroke-width="1" opacity=".5"/></svg>
+    </div>
+    <div class="seat">
+      <h1>LA-39 &nbsp;JAMMU-6</h1>
+      <div class="sub">AJK General Election 2026 · Refugee / Displaced Kashmiri Seat</div>
+      <div class="cand">Candidate: <b>Kh. M. Usman Naeem</b>, Advocate · PTI-AJK &nbsp;<span class="ur">خواجہ محمد عثمان نعیم</span></div>
+    </div>
+    <div class="mast-right">
+      <div class="mchip"><div class="n" id="m-vot">—</div><div class="l">Voters</div></div>
+      <div class="mchip"><div class="n" id="m-reach">—</div><div class="l">Reachable</div></div>
+      <div class="mchip poll"><div class="n" id="m-days">—</div><div class="l">Days to poll</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-in">
+    <button class="tab on" data-view="dash"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>Dashboard</button>
+    <button class="tab" data-view="roll"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>Voter Roll</button>
+    <button class="tab" data-view="blocks"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/></svg>Electoral Blocks</button>
+    <div class="nav-tag"><span class="dotlive"></span> Source: LA39.xlsx · 36,863 records</div>
+  </div>
+</nav>
+
+<div class="pbanner"><div class="in">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 9v4m0 4h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L14.7 3.9a2 2 0 00-3.4 0z"/></svg>
+  <div><b>Restricted campaign tool.</b> Contains personal voter data (CNIC & phone numbers). Individual records are masked by default and access-gated. Do not index publicly or share the sensitive roll outside the campaign team.</div>
+</div></div>
+
+<div class="wrap">
+
+<!-- ============ DASHBOARD ============ -->
+<section class="view on" id="v-dash">
+
+  <div class="kpis">
+    <div class="kpi"><div class="kl">Total Voters</div><div class="kv" data-count id="k-vot">0</div><div class="ks">Across <b id="k-blk2">0</b> electoral blocks</div></div>
+    <div class="kpi k-reach"><div class="kl">Phone-Reachable</div><div class="kv" data-count id="k-reach">0</div><div class="ks"><b id="k-reachp">0%</b> · GOTV / WhatsApp universe</div></div>
+    <div class="kpi k-fem"><div class="kl">Female Voters</div><div class="kv" data-count id="k-fem">0</div><div class="ks"><b id="k-femp">0%</b> of the electorate</div></div>
+    <div class="kpi k-blk"><div class="kl">Phone Numbers</div><div class="kv" data-count id="k-nums">0</div><div class="ks">Total contactable lines on file</div></div>
+    <div class="kpi k-dist"><div class="kl">Districts</div><div class="kv" data-count id="k-dist">0</div><div class="ks">Settlement districts (from CNIC)</div></div>
+  </div>
+
+  <!-- SIGNATURE BAND -->
+  <div class="card band-card">
+    <div class="band-head">
+      <div><div class="ct"><span class="tick"></span>District Command · electorate at a glance</div>
+        <div style="font-size:11.5px;color:var(--muted);margin-top:6px">Segment width ∝ voter mass · inner shade ∝ phone reachability · top bar = strategic role</div></div>
+      <div class="band-note">Hover a district for detail. The three <b style="color:var(--saffron)">margin-expansion</b> districts (Attock · Chakwal · Islamabad) are the primary path to the winning total.</div>
+    </div>
+    <div class="band" id="band"></div>
+    <div class="band-legend">
+      <span><i class="lg reach"></i> Phone reachability (inner fill)</span>
+      <span><i class="lg" style="background:var(--saffron)"></i> Margin expansion</span>
+      <span><i class="lg" style="background:var(--green-l)"></i> Defend / stronghold mix</span>
+      <span><i class="lg" style="background:var(--danger)"></i> Raja watch (Jhelum)</span>
+      <span><i class="lg" style="background:var(--muted-2)"></i> Secondary</span>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card pad">
+      <div class="ct" style="margin-bottom:14px"><span class="tick"></span>Districts — roll & reachability</div>
+      <table class="dtable"><thead><tr>
+        <th>District</th><th class="num">Voters</th><th class="num hide-sm">Male</th><th class="num hide-sm">Female</th>
+        <th class="num">Reachable</th><th class="num hide-sm">Blocks</th></tr></thead>
+        <tbody id="dtbody"></tbody></table>
+    </div>
+    <div class="card pad">
+      <div class="ct" style="margin-bottom:16px"><span class="tick"></span>Gender composition</div>
+      <div class="split">
+        <div class="donut"><svg viewBox="0 0 36 36" style="width:100%;height:100%;transform:rotate(-90deg)">
+          <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--surface-2)" stroke-width="4.4"/>
+          <circle id="don-f" cx="18" cy="18" r="15.9" fill="none" stroke="var(--saffron)" stroke-width="4.4" stroke-dasharray="0 100" stroke-linecap="round"/>
+        </svg><div class="mid"><div class="n" id="don-tot">0</div><div class="l">voters</div></div></div>
+        <div class="leg">
+          <div class="row"><span class="sw" style="background:var(--info)"></span><div class="tx"><div class="a">Male</div><div class="b" id="leg-mp">—</div></div><div class="vv" id="leg-m" style="color:var(--info)">0</div></div>
+          <div class="row"><span class="sw" style="background:var(--saffron)"></span><div class="tx"><div class="a">Female</div><div class="b" id="leg-fp">—</div></div><div class="vv" id="leg-f" style="color:var(--saffron)">0</div></div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.5;border-top:1px solid var(--line-2);padding-top:11px;margin-top:2px">
+            ~17k women on the roll — reach them through privacy-safe channels (inbound Click-to-WhatsApp, female block workers), never exposed group lists.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card pad" style="margin-bottom:18px">
+    <div class="ct" style="margin-bottom:14px"><span class="tick"></span>Phone reachability — the contactable universe</div>
+    <div class="reachwrap">
+      <div class="reachbar"><div class="on" id="reach-on" style="width:0%">0%</div><div class="off" id="reach-off">unreachable (canvass on foot)</div></div>
+      <div class="reachsub"><span><b id="reach-n">0</b> voters with a phone on file</span><span><b id="reach-nums">0</b> total lines · avg <b id="reach-avg">0</b>/reachable voter</span></div>
+    </div>
+  </div>
+
+  <div class="ct" style="margin:0 2px 12px"><span class="tick"></span>Strategic read — campaign intelligence layer</div>
+  <div class="strat">
+    <div class="si g"><div class="h">◆ Khawaja / Kashmiri base</div>Own biradari clusters — Wah Cantt (Losar, Kashmir Colony, Lalarukh), Rawalpindi Cantt wards, Kashmir Colony Jhelum. Emotional base → <b>90%+ GOTV target</b>.</div>
+    <div class="si a"><div class="h">▲ Margin expansion</div>Attock + Chakwal + Islamabad — the single biggest, most PTI-friendly bloc. Pindi Gheb, Bhon, Dhudial, Ikhlas, Jand. <b>The path to 11,000+.</b></div>
+    <div class="si r"><div class="h">● Raja threat (Jhelum)</div>Concentrated in Suleman Paras — the bulk of Siddique's biradari vote sits in one pocket. Run a <b>surrogate strategy</b> with non-Raja local leaders there.</div>
+    <div class="si b"><div class="h">◇ Syed persuasion</div>Spread across many localities; respect legal & scholarly standing. Usman's <b>Advocate</b> credential is a direct appeal — personal letters + elder endorsements.</div>
+  </div>
+  <div class="src">Quantitative figures derived live from <b>LA39.xlsx</b> (36,863 records). Strategic annotations from the campaign's biradari intelligence analysis.</div>
+</section>
+
+<!-- ============ VOTER ROLL ============ -->
+<section class="view" id="v-roll">
+  <div class="toolbar">
+    <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="q" type="text" placeholder="Search name (Urdu), CNIC, phone, or block code…" autocomplete="off"></div>
+    <div class="sel"><select id="f-dist"><option value="">All districts</option></select></div>
+    <div class="sel"><select id="f-gender"><option value="">All genders</option><option value="0">Male</option><option value="1">Female</option></select></div>
+    <label class="chk"><input type="checkbox" id="f-phone"> Has phone</label>
+    <button class="btn ghost" id="btn-reveal"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><span id="reveal-lab">Reveal mode</span></button>
+    <button class="btn warn" id="btn-export"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Export</button>
+  </div>
+
+  <div class="rollmeta">
+    <div class="cnt"><b id="roll-count">0</b> voters match</div>
+    <div class="activefilters" id="active-filters"></div>
+  </div>
+
+  <div id="roll-table"></div>
+
+  <div class="pager" id="pager"></div>
+</section>
+
+<!-- ============ BLOCKS ============ -->
+<section class="view" id="v-blocks">
+  <div class="toolbar">
+    <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="bq" type="text" placeholder="Search block code…" autocomplete="off"></div>
+    <div class="sel"><select id="bf-dist"><option value="">All districts</option></select></div>
+    <div class="sel"><select id="bf-sort"><option value="total">Sort: most voters</option><option value="phone">Sort: most reachable</option><option value="code">Sort: block code</option></select></div>
+    <div class="cnt" style="margin-left:auto;font-size:12.5px;color:var(--muted);align-self:center"><b id="blk-count" style="color:var(--ink);font-family:var(--disp)">0</b> blocks</div>
+  </div>
+  <div class="blkgrid" id="blkgrid"></div>
+</section>
+
+</div>
+
+<div class="foot-note">
+  <b>LA-39 Jammu-6 Electorate Intelligence</b> — internal campaign platform for Kh. M. Usman Naeem (Advocate), PTI-AJK.<br>
+  Built on the official electoral roll (LA39.xlsx). District geography inferred from CNIC region codes; every original record preserved and searchable.<br>
+  Handle voter CNIC and phone data in line with electoral-roll confidentiality and voter privacy — especially for female voters.
+</div>
+
+<!-- DETAIL DRAWER -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Voter detail"></aside>
+
+<!-- ACCESS GATE -->
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <div class="lock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+    <h2>Voter roll — access</h2>
+    <p>The individual voter database holds personal data (names, CNIC, phone). Enter the campaign access code to continue.</p>
+    <input id="gate-input" type="password" placeholder="Access code" autocomplete="off">
+    <div class="err" id="gate-err"></div>
+    <button class="go" id="gate-go">Unlock</button>
+    <div class="note">Client-side gate for casual protection only. For a live subdomain, put this behind real server authentication and keep the page out of search indexes.</div>
+  </div>
+</div>
+
+<script src="la39_data.js"></script>
+<script>
+/* =========================================================
+   CONFIG  — change ACCESS_CODE before deploying
+   ========================================================= */
+const ACCESS_CODE = "LA39-USMAN";      // <-- set your own campaign code here
+const POLL_DATE   = new Date("2026-07-27T08:00:00+05:00");
+const PAGE_SIZES  = [40, 80, 200];
+
+/* strategic role per district (annotation layer) */
+const ROLE = {
+  Attock:'margin', Chakwal:'margin', Islamabad:'margin',
+  Rawalpindi:'defend', Jhelum:'watch',
+  Gujranwala:'sec', Gujrat:'sec', 'Kashmir-origin':'defend', 'KP-origin':'sec', Other:'sec'
+};
+const ROLE_LABEL = {margin:'Margin expansion',defend:'Defend / stronghold',watch:'Raja watch',sec:'Secondary'};
+const DCOLOR = {Attock:'#DB8419',Chakwal:'#E0A83A',Rawalpindi:'#15764C',Jhelum:'#B23A2E',
+  Islamabad:'#C4740F',Gujranwala:'#5A6A61',Gujrat:'#8A968E','Kashmir-origin':'#0E5A3B','KP-origin':'#8A968E',Other:'#B0BAB2'};
+
+let D, V, DIST, unlocked=false, revealMode=false;
+let state={q:'',dist:'',gender:'',phone:false,block:null,page:1,size:40,idx:[]};
+let bstate={q:'',dist:'',sort:'total'};
+
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const fmt=n=>n.toLocaleString('en-US');
+const pct=(a,b)=>b?Math.round(a/b*100):0;
+
+/* ---------- BOOT ---------- */
+function boot(){
+  if(!window.LA39){ $('#load .lt').textContent='Data file (la39_data.js) not found — host it beside index.html.'; return; }
+  D=window.LA39; V=D.voters; DIST=D.meta.districts;
+  buildDashboard();
+  buildFilters();
+  wire();
+  setTimeout(()=>$('#load').classList.add('done'),250);
+}
+
+/* ---------- DASHBOARD ---------- */
+function buildDashboard(){
+  const m=D.meta;
+  $('#m-vot').textContent=fmt(m.totalVoters);
+  $('#m-reach').textContent=pct(m.phoneReach,m.totalVoters)+'%';
+  const days=Math.max(0,Math.ceil((POLL_DATE-new Date())/864e5));
+  $('#m-days').textContent=days;
+
+  setCount('#k-vot',m.totalVoters); $('#k-blk2').textContent=fmt(m.blocks);
+  setCount('#k-reach',m.phoneReach); $('#k-reachp').textContent=pct(m.phoneReach,m.totalVoters)+'%';
+  setCount('#k-fem',m.female); $('#k-femp').textContent=pct(m.female,m.totalVoters)+'%';
+  setCount('#k-nums',m.phoneNums);
+  setCount('#k-dist',m.distAgg.filter(d=>['Attock','Chakwal','Rawalpindi','Jhelum','Islamabad','Gujranwala','Gujrat'].includes(d.name)).length);
+
+  // band
+  const agg=m.distAgg, maxT=Math.max(...agg.map(d=>d.total));
+  const band=$('#band'); band.innerHTML='';
+  agg.forEach(d=>{
+    const role=ROLE[d.name]||'sec';
+    const reach=pct(d.phone,d.total);
+    const seg=document.createElement('div');
+    seg.className='seg r-'+role;
+    seg.style.flex=d.total+' 1 0';
+    seg.title=`${d.name}: ${fmt(d.total)} voters · ${reach}% reachable · ${ROLE_LABEL[role]}`;
+    seg.innerHTML=`<div class="role"></div><div class="fill" data-h="${reach}"></div>
+      <div class="lab"><div class="dn">${d.name}</div><div class="dv">${fmt(d.total)}</div><div class="dp">${reach}% ✆</div></div>`;
+    band.appendChild(seg);
+  });
+  requestAnimationFrame(()=>$$('.seg .fill').forEach(f=>f.style.height=f.dataset.h+'%'));
+
+  // district table
+  const tb=$('#dtbody'); tb.innerHTML='';
+  agg.forEach(d=>{
+    const reach=pct(d.phone,d.total);
+    const tr=document.createElement('tr'); tr.className='clickable'; tr.dataset.dist=d.name;
+    tr.innerHTML=`<td><div class="dname"><span class="ddot" style="background:${DCOLOR[d.name]||'#999'}"></span>${d.name}</div>
+      <div class="minibar"><i style="width:${Math.round(d.total/maxT*100)}%;background:${DCOLOR[d.name]||'#999'}"></i></div></td>
+      <td class="num">${fmt(d.total)}</td><td class="num hide-sm">${fmt(d.male)}</td><td class="num hide-sm">${fmt(d.female)}</td>
+      <td class="num"><span class="reachpill">${reach}%</span></td><td class="num hide-sm">${fmt(d.blocks)}</td>`;
+    tr.onclick=()=>{ state.dist=d.name; state.block=null; state.page=1; go('roll'); applyFilters(); syncControls(); };
+    tb.appendChild(tr);
+  });
+
+  // gender donut
+  const fp=pct(m.female,m.totalVoters);
+  $('#don-tot').textContent=(m.totalVoters/1000).toFixed(1)+'k';
+  $('#leg-m').textContent=fmt(m.male); $('#leg-f').textContent=fmt(m.female);
+  $('#leg-mp').textContent=(100-fp)+'% of roll'; $('#leg-fp').textContent=fp+'% of roll';
+  requestAnimationFrame(()=>{ $('#don-f').style.transition='stroke-dasharray 1.1s cubic-bezier(.2,.8,.2,1)';
+    $('#don-f').setAttribute('stroke-dasharray',`${fp} ${100-fp}`); });
+
+  // reach
+  const rp=pct(m.phoneReach,m.totalVoters);
+  requestAnimationFrame(()=>{ $('#reach-on').style.width=rp+'%'; $('#reach-on').textContent=rp+'% reachable'; });
+  $('#reach-n').textContent=fmt(m.phoneReach);
+  $('#reach-nums').textContent=fmt(m.phoneNums);
+  $('#reach-avg').textContent=(m.phoneNums/m.phoneReach).toFixed(1);
+}
+function setCount(sel,val){
+  const el=$(sel); const dur=900, t0=performance.now();
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){el.textContent=fmt(val);return;}
+  (function step(t){ const p=Math.min(1,(t-t0)/dur); const e=1-Math.pow(1-p,3);
+    el.textContent=fmt(Math.round(val*e)); if(p<1)requestAnimationFrame(step); })(t0);
+}
+
+/* ---------- FILTERS ---------- */
+function buildFilters(){
+  const opts=DIST.map(d=>`<option value="${d}">${d}</option>`).join('');
+  $('#f-dist').innerHTML='<option value="">All districts</option>'+opts;
+  $('#bf-dist').innerHTML='<option value="">All districts</option>'+opts;
+}
+
+/* ---------- ROLL ---------- */
+function applyFilters(){
+  const q=state.q.trim().toLowerCase();
+  const qDigits=q.replace(/\D/g,'');
+  const distIdx=state.dist? DIST.indexOf(state.dist):-1;
+  const g=state.gender===''?-1:+state.gender;
+  const idx=[];
+  for(let i=0;i<V.length;i++){
+    const r=V[i];
+    if(distIdx>=0 && r[4]!==distIdx) continue;
+    if(g>=0 && r[3]!==g) continue;
+    if(state.phone && !r[5]) continue;
+    if(state.block!=null && r[0]!==state.block) continue;
+    if(q){
+      let hit=r[1].toLowerCase().includes(q);
+      if(!hit && qDigits){ hit=r[2].replace(/\D/g,'').includes(qDigits) || (r[5]&&r[5].replace(/\D/g,'').includes(qDigits)) || String(r[0]).includes(qDigits); }
+      if(!hit) continue;
+    }
+    idx.push(i);
+  }
+  state.idx=idx; state.page=1;
+  renderRoll();
+}
+function renderRoll(){
+  const idx=state.idx, total=idx.length;
+  $('#roll-count').textContent=fmt(total);
+  renderActiveFilters();
+  const host=$('#roll-table');
+  if(!total){ host.innerHTML=`<div class="empty"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><div class="t">No voters match</div><div>Adjust your search or filters.</div></div>`; $('#pager').innerHTML=''; return; }
+  const pages=Math.ceil(total/state.size);
+  if(state.page>pages)state.page=pages;
+  const start=(state.page-1)*state.size, slice=idx.slice(start,start+state.size);
+  let rows='';
+  slice.forEach((vi,k)=>{
+    const r=V[vi], g=r[3], hasP=!!r[5], pc=hasP? r[5].split(';').length:0;
+    rows+=`<tr data-vi="${vi}">
+      <td class="vnum">${start+k+1}</td>
+      <td class="vname"><span class="nm">${esc(shortName(r[1]))}</span></td>
+      <td><span class="gtag ${g?'f':'m'}">${g?'Female':'Male'}</span></td>
+      <td class="hide-sm"><span class="cnic">${revealMode?esc(r[2]):maskCnic(r[2])}</span></td>
+      <td class="phcell">${hasP?`<span class="yes">${revealMode?esc(r[5].split(';')[0]):maskPhone(r[5].split(';')[0])}</span>${pc>1?`<span class="phcnt">+${pc-1}</span>`:''}`:'<span class="no">—</span>'}</td>
+      <td class="hide-sm"><span class="dpill">${DIST[r[4]]}</span></td>
+      <td><span class="blkcode">${r[0]}</span></td></tr>`;
+  });
+  host.innerHTML=`<table class="vtable"><thead><tr>
+    <th class="vnum">#</th><th>Voter (name · father/husband · address)</th><th>Gender</th>
+    <th class="hide-sm">CNIC</th><th>Phone</th><th class="hide-sm">District</th><th>Block</th></tr></thead>
+    <tbody>${rows}</tbody></table>`;
+  host.querySelectorAll('tbody tr').forEach(tr=>tr.onclick=()=>openDrawer(+tr.dataset.vi));
+  renderPager(pages,total,start,slice.length);
+}
+function renderPager(pages,total,start,shown){
+  const cur=state.page;
+  let btns='';
+  const mk=(p,lab,dis,c)=>`<button class="pgb ${c?'cur':''}" ${dis?'disabled':''} data-p="${p}">${lab}</button>`;
+  btns+=mk(cur-1,'‹',cur<=1);
+  const win=[]; const add=p=>{if(p>=1&&p<=pages&&!win.includes(p))win.push(p)};
+  add(1);add(2);add(cur-1);add(cur);add(cur+1);add(pages-1);add(pages);
+  win.sort((a,b)=>a-b); let prev=0;
+  win.forEach(p=>{ if(p-prev>1)btns+=`<span style="color:var(--muted-2);padding:0 3px">…</span>`; btns+=mk(p,p,false,p===cur); prev=p; });
+  btns+=mk(cur+1,'›',cur>=pages);
+  const sizeSel=`<div class="sel pgsize"><select id="pgsize">${PAGE_SIZES.map(s=>`<option value="${s}" ${s===state.size?'selected':''}>${s}/page</option>`).join('')}</select></div>`;
+  $('#pager').innerHTML=`<div class="pginfo">Showing <b>${fmt(start+1)}–${fmt(start+shown)}</b> of <b>${fmt(total)}</b>${sizeSel}</div><div class="pgbtns">${btns}</div>`;
+  $('#pager').querySelectorAll('.pgb').forEach(b=>b.onclick=()=>{if(!b.disabled){state.page=+b.dataset.p;renderRoll();window.scrollTo({top:180,behavior:'smooth'});}});
+  $('#pgsize').onchange=e=>{state.size=+e.target.value;state.page=1;renderRoll();};
+}
+function renderActiveFilters(){
+  const c=$('#active-filters'); c.innerHTML='';
+  const chip=(lab,clear)=>{const el=document.createElement('span');el.className='fchip';el.innerHTML=`${lab} <button>×</button>`;el.querySelector('button').onclick=clear;c.appendChild(el);};
+  if(state.dist)chip('District: '+state.dist,()=>{state.dist='';syncControls();applyFilters();});
+  if(state.gender!=='')chip('Gender: '+(state.gender==='1'?'Female':'Male'),()=>{state.gender='';syncControls();applyFilters();});
+  if(state.phone)chip('Has phone',()=>{state.phone=false;syncControls();applyFilters();});
+  if(state.block!=null)chip('Block: '+state.block,()=>{state.block=null;applyFilters();});
+  if(state.q)chip('“'+state.q+'”',()=>{state.q='';$('#q').value='';applyFilters();});
+}
+function syncControls(){ $('#f-dist').value=state.dist; $('#f-gender').value=state.gender; $('#f-phone').checked=state.phone; }
+
+/* ---------- MASKING ---------- */
+function maskCnic(c){ const p=c.split('-'); if(p.length!==3)return c.slice(0,3)+'••••••••••••'; return p[0].slice(0,3)+'••-•••••••-•'; }
+function maskPhone(p){ const d=p.replace(/\D/g,''); return d.slice(0,4)+'-•••••••'; }
+function shortName(n){ n=n.replace(/^\s*\d+\s*/,''); return n.length>64?n.slice(0,64)+'…':n; }
+function esc(s){ return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+/* ---------- DRAWER ---------- */
+function openDrawer(vi){
+  const r=V[vi], g=r[3], phones=r[5]?r[5].split(';'):[];
+  let rev={c:false,p:false};
+  const dr=$('#drawer');
+  const render=()=>{
+    dr.innerHTML=`
+    <div class="dw-head">
+      <button class="close" id="dw-close"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#fff" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      <div class="eyebrow">Voter record · Block ${r[0]} · ${DIST[r[4]]}</div>
+      <div class="vn">${esc(shortName(r[1]))}</div>
+      <div class="meta"><span class="mtag">${g?'Female':'Male'}</span><span class="mtag">${phones.length?phones.length+' phone line'+(phones.length>1?'s':''):'No phone on file'}</span></div>
+    </div>
+    <div class="dw-body">
+      <div class="field"><div class="fl">CNIC <button class="reveal" id="rc">${rev.c?'Hide':'Reveal'}</button></div>
+        <div class="fv mono ${rev.c?'':'masked'}">${rev.c?esc(r[2]):maskCnic(r[2])}</div></div>
+      <div class="field"><div class="fl">Phone numbers ${phones.length?`<button class="reveal" id="rp">${rev.p?'Hide':'Reveal'}</button>`:''}</div>
+        ${phones.length? `<div class="phlist">${phones.map(p=>`
+          <div class="phline"><svg class="pi" viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+          <span class="pn">${rev.p?esc(p):maskPhone(p)}</span>
+          ${rev.p?`<a class="wa" href="https://wa.me/92${p.replace(/\D/g,'').replace(/^0/,'')}" target="_blank" rel="noopener" title="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.5-.8-2.5-1.4-3.5-3.1-.3-.5.3-.4.8-1.4.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.4z"/></svg></a>`:''}
+          </div>`).join('')}</div>` : `<div class="fv masked">No phone number on file · canvass on foot</div>`}
+      </div>
+      <div class="field"><div class="fl">Full electoral-roll entry (original)</div>
+        <div class="rawname">${esc(r[1])}</div>
+        <div class="fullrec">Contains serial · name · father/husband · occupation · age · address, exactly as recorded in LA39.xlsx.</div></div>
+      <div class="field"><div class="fl">Location</div>
+        <div class="fv">Electoral block <b class="mono" style="color:var(--green)">${r[0]}</b> · ${DIST[r[4]]} district${ROLE[DIST[r[4]]]?` · <span style="color:var(--muted)">${ROLE_LABEL[ROLE[DIST[r[4]]]]}</span>`:''}</div></div>
+    </div>`;
+    $('#dw-close').onclick=closeDrawer;
+    if($('#rc'))$('#rc').onclick=()=>{rev.c=!rev.c;render();};
+    if($('#rp'))$('#rp').onclick=()=>{rev.p=!rev.p;render();};
+  };
+  render();
+  $('#scrim').classList.add('on'); dr.classList.add('on');
+}
+function closeDrawer(){ $('#scrim').classList.remove('on'); $('#drawer').classList.remove('on'); }
+
+/* ---------- BLOCKS ---------- */
+function renderBlocks(){
+  let list=D.meta.blockAgg.slice();
+  if(bstate.dist)list=list.filter(b=>b.district===bstate.dist);
+  if(bstate.q){const q=bstate.q.replace(/\D/g,'');list=list.filter(b=>String(b.code).includes(q));}
+  if(bstate.sort==='total')list.sort((a,b)=>b.total-a.total);
+  else if(bstate.sort==='phone')list.sort((a,b)=>b.phone-a.phone);
+  else list.sort((a,b)=>a.code-b.code);
+  $('#blk-count').textContent=fmt(list.length);
+  const g=$('#blkgrid');
+  g.innerHTML=list.slice(0,600).map(b=>{
+    const mp=pct(b.male,b.total),fp=100-mp,rp=pct(b.phone,b.total);
+    return `<div class="blk" data-code="${b.code}" data-dist="${b.district}">
+      <div class="top"><span class="code">${b.code}</span><span class="dpill2">${b.district}</span></div>
+      <div class="big">${fmt(b.total)} <span>voters</span></div>
+      <div class="mf"><div class="mm" style="width:${mp}%"></div><div class="ff" style="width:${fp}%"></div></div>
+      <div class="foot"><span>♂ ${fmt(b.male)} · ♀ ${fmt(b.female)}</span><span class="r">${rp}% ✆</span></div>
+    </div>`;}).join('');
+  g.querySelectorAll('.blk').forEach(el=>el.onclick=()=>{
+    if(!requireAccess())return;
+    state.block=+el.dataset.code; state.dist=''; state.q=''; $('#q').value=''; state.page=1;
+    go('roll'); applyFilters(); syncControls();
+  });
+}
+
+/* ---------- NAV / GATE ---------- */
+function go(view){
+  $$('.tab').forEach(t=>t.classList.toggle('on',t.dataset.view===view));
+  $$('.view').forEach(v=>v.classList.remove('on'));
+  $('#v-'+view).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function requireAccess(){
+  if(unlocked)return true;
+  $('#gate').classList.add('on'); setTimeout(()=>$('#gate-input').focus(),100);
+  return false;
+}
+function tryUnlock(){
+  if($('#gate-input').value===ACCESS_CODE){
+    unlocked=true; $('#gate').classList.remove('on'); $('#gate-err').textContent='';
+    if(pendingView){go(pendingView); if(pendingView==='roll')applyFilters(); if(pendingView==='blocks')renderBlocks(); pendingView=null;}
+  } else { $('#gate-err').textContent='Incorrect code. Try again.'; $('#gate-input').select(); }
+}
+let pendingView=null;
+
+/* ---------- WIRE ---------- */
+function wire(){
+  $$('.tab').forEach(t=>t.onclick=()=>{
+    const v=t.dataset.view;
+    if((v==='roll'||v==='blocks') && !unlocked){ pendingView=v; requireAccess(); return; }
+    go(v);
+    if(v==='roll' && !state.idx.length)applyFilters();
+    if(v==='blocks')renderBlocks();
+  });
+
+  let dq; $('#q').oninput=e=>{clearTimeout(dq);dq=setTimeout(()=>{state.q=e.target.value;applyFilters();},220);};
+  $('#f-dist').onchange=e=>{state.dist=e.target.value;applyFilters();};
+  $('#f-gender').onchange=e=>{state.gender=e.target.value;applyFilters();};
+  $('#f-phone').onchange=e=>{state.phone=e.target.checked;applyFilters();};
+  $('#btn-reveal').onclick=()=>{revealMode=!revealMode;$('#btn-reveal').classList.toggle('ghost',!revealMode);
+    $('#reveal-lab').textContent=revealMode?'Hide data':'Reveal mode';
+    $('#btn-reveal').style.background=revealMode?'var(--saffron)':''; renderRoll();};
+  $('#btn-export').onclick=exportCsv;
+
+  let bdq; $('#bq').oninput=e=>{clearTimeout(bdq);bdq=setTimeout(()=>{bstate.q=e.target.value;renderBlocks();},200);};
+  $('#bf-dist').onchange=e=>{bstate.dist=e.target.value;renderBlocks();};
+  $('#bf-sort').onchange=e=>{bstate.sort=e.target.value;renderBlocks();};
+
+  $('#scrim').onclick=closeDrawer;
+  $('#gate-go').onclick=tryUnlock;
+  $('#gate-input').onkeydown=e=>{if(e.key==='Enter')tryUnlock();};
+  document.onkeydown=e=>{if(e.key==='Escape'){closeDrawer();$('#gate').classList.remove('on');}};
+}
+
+/* ---------- EXPORT ---------- */
+function exportCsv(){
+  if(!confirm('Export the '+fmt(state.idx.length)+' matching voters — including full CNIC and phone numbers — to a CSV file?\n\nThis is sensitive personal data. Only export for authorised campaign use.'))return;
+  const head=['Block','Name','CNIC','Gender','District','Phones'];
+  const lines=[head.join(',')];
+  state.idx.forEach(vi=>{
+    const r=V[vi];
+    const row=[r[0],'"'+r[1].replace(/"/g,'""')+'"',r[2],r[3]?'Female':'Male',DIST[r[4]],'"'+(r[5]||'')+'"'];
+    lines.push(row.join(','));
+  });
+  const blob=new Blob(['\ufeff'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+  a.download='LA39_voters_filtered_'+state.idx.length+'.csv';a.click();
+}
+
+boot();
+</script>
+</body>
+</html>
